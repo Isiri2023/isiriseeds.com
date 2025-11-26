@@ -85,7 +85,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;
+     padding: 0 8%; 
     /* Optional: Add a subtle shadow for depth */
     box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1); 
 }
