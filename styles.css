@@ -194,17 +194,14 @@ cursor: pointer;
 
 /* Positioning the button (assuming this is part of the accordion content now) */
 .hero-right .btn {
-    position: absolute;
-    /* If this is a static hero, this absolute positioning might be disruptive. 
-    It's best to remove it unless it's strictly necessary for the accordion functionality. */
-    position: static; 
-    /* Remove absolute positioning lines unless required for specific accordion layout: 
-   left: 50%;
-   transform: translateX(-50%);
-    bottom: 40px;  /* change this number to move up/down */
-    z-index: 10;
-    bottom: 40px; 
-    z-index: 10; */
+    position: static;
+    /* If you need absolute positioning for a specific layout, uncomment and adjust:
+       position: absolute;
+       left: 50%;
+       transform: translateX(-50%);
+       bottom: 40px;
+       z-index: 10;
+    */
 }
 
 .btn:hover {
