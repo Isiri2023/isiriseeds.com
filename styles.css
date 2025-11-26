@@ -54,25 +54,40 @@ section {
 /* =============================
    HERO SECTION — 33% / 66%
 ============================= */
+/* --- Color Variables for Consistency --- */
+:root {
+    --primary-green: #0e6b23; /* Logo background & Button */
+    --secondary-green: #064a19; /* Button hover */
+    --off-white: #f8fbec; /* A very light, slightly greenish-white */
+    --light-greenish-white: #f7fbf2; /* For a subtle right-side background */
+}
 
+/* --- Hero Component Structure --- */
 .hero {
     display: flex;
-    height: calc(100vh - 60px);
+    /* Adjusted height to use 100% of the viewport height (minus nav height if applicable) */
+    height: 100vh; 
     margin-top: 0;
     align-items: stretch;
     padding: 0;
+    /* Ensure no scrollbar appears due to height calculation */
+    overflow: hidden; 
 }
 
-/* LEFT SIDE — 33% WIDTH + FULL BACKGROUND IMAGE */
+/* --- LEFT SIDE: Logo/Identity Section (33%) --- */
 .hero-left {
     flex: 0 0 33%;
-    background: #0e6b23 url("4d8d7eba-c59c-48bb-869a-b4f621e22f22.png")
-        center center / cover no-repeat;
+    /* Use the defined primary green color */
+    background-color: var(--primary-green); 
+    /* Remove the unnecessary background image from this side */
+    /* background: var(--primary-green) url("4d8d7eba-c59c-48bb-869a-b4f621e22f22.png") center center / cover no-repeat; */
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0;
+    /* Optional: Add a subtle shadow for depth */
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1); 
 }
 
 /* Hide old logo img if still in HTML */
@@ -80,35 +95,42 @@ section {
     display: none;
 }
 
-/* RIGHT SIDE — 66% CONTENT */
+/* --- RIGHT SIDE: Content & Image Section (67%) --- */
 .hero-right {
-    flex: 0 0 66%;
+    /* Slightly increased flex basis to fill the rest of the space */
+    flex: 1; 
+    /* Add a light background color for better separation from the main body */
+    background-color: var(--light-greenish-white);
     
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 0 5%;
-        position: relative;
+    /* Increased horizontal padding for more breathing room */
+    padding: 0 8%; 
+    position: relative;
     z-index: 1;
-    
 }
 
+/* Right-side Text Styling */
 .hero-right h1 {
     font-size: 3.5rem;
-    color: #0e6b23;
-    margin-bottom: 20px;
+    color: var(--primary-green); /* Text color matching the logo green */
+    margin-bottom: 25px; /* Increased margin */
+    /* Optional: Add a slight text shadow for definition */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05); 
 }
 
 .hero-right p {
-    font-size: 1.2rem;
-    color: #0e6b23;
-    margin-bottom: 30px;
-    max-width: 600px;
+    font-size: 1.3rem; /* Slightly larger text for emphasis */
+    color: var(--secondary-green); /* Darker green for body text for better contrast */
+    margin-bottom: 40px; /* Increased margin */
+    max-width: 650px; /* Wider max width */
+    line-height: 1.5; /* Improved readability */
 }
 
-
-
+/* Image Overlay (Adjusted for better visual integration) */
+/* The background image is now applied here for the accordion/hero content */
 .hero-right::before {
     content: "";
     position: absolute;
@@ -116,36 +138,52 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(248, 251, 232, 0.0);
+    /* Replace with the correct image URL for your main hero background */
+    background: url("your-hero-image-url.jpg") center center / cover no-repeat; 
     z-index: -1;
+    /* Added a subtle dark overlay to make text pop more */
+    opacity: 0.9; /* 0.0 opacity in original, increasing for effect */
+    background-color: rgba(0, 0, 0, 0.2); 
+    /* Blend the overlay with the light background */
+    mix-blend-mode: multiply; 
 }
 
 
+/* --- Button Styling --- */
 .btn {
-    background-color: #0e6b23;
-    color: #fff;
-    padding: 15px 30px;
+    background-color: var(--primary-green);
+    color: var(--off-white); /* Use off-white for button text */
+    padding: 15px 35px; /* Slightly more padding */
     border: none;
-    border-radius: 5px;
+    border-radius: 8px; /* Slightly more rounded corners */
     text-decoration: none;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.05rem;
+    font-weight: 700; /* Bolder text */
+    letter-spacing: 0.5px; /* Subtle letter spacing */
     cursor: pointer;
-    transition: background-color 0.2s;
+    /* Added a subtle box shadow to make the button lift off the page */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease; /* Smoother transition */
 }
 
-
+/* Positioning the button (assuming this is part of the accordion content now) */
 .hero-right .btn {
-    position: absolute;
+    /* If this is a static hero, this absolute positioning might be disruptive. 
+    It's best to remove it unless it's strictly necessary for the accordion functionality. */
+    position: static; 
+    /* Remove absolute positioning lines unless required for specific accordion layout: 
     left: 50%;
     transform: translateX(-50%);
-    bottom: 40px;  /* change this number to move up/down */
-    z-index: 10;
-}
-.btn:hover {
-    background-color: #064a19;
+    bottom: 40px; 
+    z-index: 10; */
 }
 
+.btn:hover {
+    background-color: var(--secondary-green); /* Darker green on hover */
+    /* Lift the button slightly on hover */
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
 /* =============================
    FEATURES SECTION (HOME)
 ============================= */
@@ -285,43 +323,6 @@ section {
     font-size: 2.5rem;
     color: #0e6b23;
     margin-bottom: 40px;
-}
-
-/* =============================
-   PRODUCTS PAGE
-============================= */
-
-.product-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
-    padding: 0 10%;
-}
-
-.product-item {
-    flex: 1 1 300px;
-    max-width: 350px;
-    text-align: center;
-}
-
-.product-item img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.product-item h3 {
-    margin-top: 15px;
-    font-size: 1.2rem;
-    color: #0e6b23;
-}
-
-/* When using icons instead of images for products */
-.product-item i {
-    font-size: 4rem;
-    color: #0e6b23;
-    margin-bottom: 10px;
 }
 
 /* =============================
