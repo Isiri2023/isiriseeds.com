@@ -75,19 +75,27 @@ section {
 }
 
 /* --- LEFT SIDE: Logo/Identity Section (33%) --- */
+/* --- LEFT SIDE: Logo/Identity Section (33%) --- */
 .hero-left {
     flex: 0 0 33%;
-    /* Use the defined primary green color */
-    background-color: var(--primary-green); 
-    /* Remove the unnecessary background image from this side */
-    /* background: var(--primary-green) url("4d8d7eba-c59c-48bb-869a-b4f621e22f22.png") center center / cover no-repeat; */
+    background-color: var(--primary-green);
     height: 100%;
     display: flex;
-    justify-content: center;
+    /* Changed from 'center' to 'flex-start' to allow for padding */
+    justify-content: flex-start; 
     align-items: center;
-     padding: 0 8%; 
-    /* Optional: Add a subtle shadow for depth */
+    /* Added padding to the right to create the desired space */
+    padding: 0 5% 0 8%; /* Top, Right, Bottom, Left. Adjust right (5%) and left (8%) as needed */
     box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1); 
+    /* If your logo is an SVG or text, you might need to wrap it in a div
+       or apply styling directly to the element containing "ISRIRI SEEDS PRODUCTION" */
+}
+
+/* If the logo is inside a specific container within hero-left, target it directly */
+.hero-left .logo-container { /* Assuming your logo is within a div with class 'logo-container' */
+    /* If you have a specific logo element, you can apply margin-right to it */
+    /* margin-right: 5%; */ 
+    /* This might be needed if the logo itself is very wide and you want space outside it */
 }
 
 /* Hide old logo img if still in HTML */
