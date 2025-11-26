@@ -85,7 +85,7 @@ scroll-margin-top: 100px;
 
 /* --- RIGHT SIDE: Content & Image Section (67%) --- */
 .hero-right {
-    flex: 0 0 66%; /* Allows the right side to take up the remaining space */
+    flex: 1; /* Allows the right side to take up the remaining space */
     background-color: var(--light-greenish-white);
     height: 100%; /* Ensure it spans full height */
     display: flex;
