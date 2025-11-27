@@ -22,12 +22,14 @@
     	
     <main>
        <!-- Hero section -->
-        <section class="hero">
-    <div class="hero-left">
-        </div>
-    <div class="hero-right">
+    <section class="hero">
+    <div class="hero-content">
+        <h1>Nurturing Growth, Harvesting the Future</h1>
+        <p>We are dedicated to providing high-quality seeds and sustainable farming solutions.</p>
         <a href="#" class="btn">Get in Touch</a>
     </div>
+</section>
+
 </section>
         <!-- Why Choose ISIRI section -->
         <section class="features" id="features">
@@ -116,25 +118,27 @@
         </section>
     </main>
     <!-- Slideshow script -->
-    <script>
-        const slideImages = [
-            'slide2.jpg',
-            'slide3.jpg',
-            'slide4.jpg',
-            'slide5.jpg'
-        ];
-        let slideIndex = 0;
-        const heroRight = document.querySelector('.hero-right');
-        function setSlide() {
-            heroRight.style.backgroundImage = `url('${slideImages[slideIndex]}')`;
-            heroRight.style.backgroundSize = 'cover';
-            heroRight.style.backgroundRepeat = 'no-repeat';
-            heroRight.style.backgroundPosition = 'center';
-            slideIndex = (slideIndex + 1) % slideImages.length;
-        }
-        // Initialize slideshow
-        setSlide();
-        setInterval(setSlide, 5000);
+     const slideImages = [
+    'slide2.jpg',
+    'slide3.jpg',
+    'slide4.jpg',
+    'slide5.jpg'
+];
+let slideIndex = 0;
+
+const hero = document.querySelector('.hero');
+
+function setSlide() {
+    hero.style.backgroundImage = `url('${slideImages[slideIndex]}')`;
+    hero.style.backgroundSize = 'cover';
+    hero.style.backgroundRepeat = 'no-repeat';
+    hero.style.backgroundPosition = 'center';
+    slideIndex = (slideIndex + 1) % slideImages.length;
+}
+
+setSlide();
+setInterval(setSlide, 5000);
+
     </script>
 </body>
 </html>

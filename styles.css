@@ -54,55 +54,16 @@ scroll-margin-top: 100px;
 
 
 /* --- Hero Component Structure --- */
-/* --- Hero Component Structure --- */
 .hero {
-    display: flex;
-    /* Use calc(100vh - 60px) based on your header's height */
-    height: calc(100vh - 60px); 
-    margin-top: 0;
-    align-items: stretch; 
-    padding: 0;
-    overflow: hidden; 
-}
-
-/* --- LEFT SIDE: Logo/Identity Section (33%) --- */
-.hero-left {
-    flex: 0 0 33%;
-    background-color: var(--primary-green); 
-    height: 100%;
-    display: flex;
-    justify-content: center; /* Center the logo */
-    align-items: center;
-    /* Reset padding to center logo */
-    padding: 0; 
-}
-
-/* --- RIGHT SIDE: Content & Image Section (67%) --- */
-.hero-right {
-    flex: 1; 
-    height: 100%; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; /* CENTER ALL CONTENT over the image */
-    padding: 0 8%; 
-    position: relative;
-    z-index: 1;
-}
-
-/* 🚨 CRITICAL: Re-apply the background image and overlay */
-.hero-right::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    /* ⚠️ Ensure this is the correct path for your crops image */
-    background: url("4d8d7eba-c59c-48bb-869a-b4f621e22f22.png") center center / cover no-repeat;
-    z-index: -1;
-    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
-    opacity: 1; 
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+    color: white;
 }
 
 /* --- Button Styling for Hero Right (Centered over image) --- */
@@ -117,14 +78,14 @@ scroll-margin-top: 100px;
 /* 2. Style for when the button is absolutely positioned (if you prefer that look) */
 /* If you just want the button centered at the bottom of the image: */
 
-.hero-right .btn {
+/*.hero-right .btn {
     position: absolute; 
     bottom: 40px; 
     left: 50%;
     transform: translateX(-50%);
     z-index: 2; 
     margin: 0; 
-}
+}*/
 
 
 /* =============================
