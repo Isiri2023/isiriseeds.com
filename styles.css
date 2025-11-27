@@ -145,17 +145,10 @@ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 transition: all 0.3s ease; /* Smoother transition */
 }
 
-/* Positioning the button (assuming this is part of the accordion content now) */
 .hero-right .btn {
-/* If this is a static hero, this absolute positioning might be disruptive. 
-   It's best to remove it unless it's strictly necessary for the accordion functionality. */
-position: static; 
-/* Remove absolute positioning lines unless required for specific accordion layout: 
-   left: 50%;
-   transform: translateX(-50%);
-   bottom: 40px; 
-   z-index: 10; */
-}
+    position: static;
+} 
+
 
 .btn:hover {
 background-color: var(--secondary-green); /* Darker green on hover */
@@ -512,5 +505,5 @@ flex-direction: column;
 
 .contact-section {
 flex-direction: column;
-}
+
 }
