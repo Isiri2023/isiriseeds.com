@@ -51,74 +51,120 @@ width: 100%;
 scroll-margin-top: 100px;
 }
 
+/* =============================
+  HERO SECTION — 33% / 66%
+============================= */
+/* =============================
+  HERO SECTION — 33% / 66%
+============================= */
 
+/* --- Hero Component Structure --- */
+.hero {
+    display: flex;
+    /* Use calc(100vh - 60px) if header height is consistently 60px, 
+       or simply 100vh for full height. I'll use 100vh here for simplicity 
+       and let the content adjust for the fixed header (scroll-margin-top). */
+    height: 100vh; 
+    margin-top: 0;
+    align-items: stretch; 
+    padding: 0;
+    overflow: hidden; 
+}
+
+/* --- LEFT SIDE: Logo/Identity Section (33%) --- */
+.hero-left {
+    flex: 0 0 33%;
+    background-color: var(--primary-green); 
+    height: 100%;
+    display: flex;
+    justify-content: center; /* Centering the logo again for clean look */
+    align-items: center;
+    padding: 0;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+/* --- RIGHT SIDE: Content & Image Section (67%) --- */
+.hero-right {
+    flex: 1; /* Allows the right side to take up the remaining space */
+    background-color: var(--light-greenish-white);
+    height: 100%; /* Ensure it spans full height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 8%; 
+    position: relative;
+    z-index: 1;
+}
+
+/* 🚨 CRITICAL FIX: Background image with correct path and full opacity */
+.hero-right::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* ⚠️ YOU MUST REPLACE THIS URL with your actual crops image path! */
+    background: url("4d8d7eba-c59c-48bb-869a-b4f621e22f22.png") center center / cover no-repeat;
+    z-index: -1;
+    /* This ensures the image is visible */
+    opacity: 1; 
+    background-color: transparent; 
+}
+
+/* Optional: Re-add your text styling for H1 and P here if you want the overlay effect */
+.hero-right h1 {
+    z-index: 2; /* Ensure text is above the image and overlay */
+    color: white; /* Change text to white for contrast against the dark overlay */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+    /* ... other styles */
+}
+
+.hero-right p {
+    z-index: 2;
+    color: #f7fbf2; /* Light color for contrast */
+    /* ... other styles */
+}
+
+/* --- Button Styling --- */
+.btn {
+    background-color: var(--primary-green);
+    color: var(--off-white); /* Use off-white for button text */
+    padding: 15px 35px; /* Slightly more padding */
+    border: none;
+    border-radius: 8px; /* Slightly more rounded corners */
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 700; /* Bolder text */
+    letter-spacing: 0.5px; /* Subtle letter spacing */
+    cursor: pointer;
+    /* Added a subtle box shadow to make the button lift off the page */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease; /* Smoother transition */
+}
+
+/* Positioning the button (assuming this is part of the accordion content now) */
+.hero-right .btn {
+    /* If this is a static hero, this absolute positioning might be disruptive. 
+    It's best to remove it unless it's strictly necessary for the accordion functionality. */
+    position: static; 
+    /* Remove absolute positioning lines unless required for specific accordion layout: 
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 40px; 
+    z-index: 10; */
+}
+
+.btn:hover {
+    background-color: var(--secondary-green); /* Darker green on hover */
+    /* Lift the button slightly on hover */
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
 /* =============================
   FEATURES SECTION (HOME)
 ============================= */
-
-/* Accordion layout */
-.accordion {
-    margin-top: 40px;
-    width: 70%;
-}
-
-.accordion-header {
-    width: 100%;
-    padding: 15px;
-    background-color: rgba(14, 107, 35, 0.85);
-    color: white;
-    border: none;
-    font-weight: bold;
-    text-align: left;
-    cursor: pointer;
-    margin-top: 10px;
-    border-radius: 5px;
-}
-
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    border-radius: 5px;
-    background-color: rgba(255,255,255,0.15);
-    transition: max-height 0.3s ease;
-    padding: 0 15px;
-}
-
-/* IMAGE SLIDER */
-.slider {
-    position: relative;
-    width: 100%;
-    margin-top: 15px;
-    overflow: hidden;
-}
-
-.slides {
-    display: flex;
-    width: 300%;
-    transition: transform 0.5s ease;
-}
-
-.slides img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-/* Buttons */
-.prev, .next {
-    position: absolute;
-    top: 40%;
-    background: rgba(0,0,0,0.4);
-    border: none;
-    padding: 10px;
-    color: white;
-    cursor: pointer;
-    transform: translateY(-50%);
-    font-size: 24px;
-}
-
-.prev { left: 10px; }
-.next { right: 10px; }
-
 
 .features {
 text-align: center;

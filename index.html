@@ -19,80 +19,16 @@
             <a href="contact.html">Contact</a>
         </nav>
     </header>
- <section class="hero">
-
-    <!-- LEFT GREEN LOGO PANEL -->
+    	
+    <main>
+       <!-- Hero section -->
+        <section class="hero">
     <div class="hero-left">
-        <img src="4d8d7eba-c59c-48bb-869a-b4f621e22f22.png" alt="ISIRI Logo">
-    </div>
-
-    <!-- RIGHT HERO SECTION -->
-    <div class="hero-right">
-        
-        <h1>NURTURING GROWTH,<br>HARVESTING THE FUTURE</h1>
-        
-        <p>We are dedicated to providing high-quality seeds and sustainable farming solutions.</p>
-
-        <button class="hero-btn">Get in Touch</button>
-
-        <!-- ACCORDION -->
-        <div class="accordion">
-
-            <!-- ITEM 1 -->
-            <div class="accordion-item">
-                <button class="accordion-header">Hybrid Seeds</button>
-                <div class="accordion-content">
-                    <div class="slider">
-                        <div class="slides">
-                          <img src="images/slide2.jpg">
-                            <img src="images/slide3.jpg">
-                            <img src="images/slide4.jpg">
-                        </div>
-                        <button class="prev">❮</button>
-                        <button class="next">❯</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ITEM 2 -->
-            <div class="accordion-item">
-                <button class="accordion-header">Organic Seeds</button>
-                <div class="accordion-content">
-                    <div class="slider">
-                        <div class="slides">
-                            <img src="images/slide2.jpg">
-                            <img src="images/slide3.jpg">
-                            <img src="images/slide4.jpg">
-                        </div>
-                        <button class="prev">❮</button>
-                        <button class="next">❯</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ITEM 3 -->
-            <div class="accordion-item">
-                <button class="accordion-header">Farming Solutions</button>
-                <div class="accordion-content">
-                    <div class="slider">
-                        <div class="slides">
-                            <img src="images/slide2.jpg">
-                            <img src="images/slide3.jpg">
-                            <img src="images/slide4.jpg">
-                        </div>
-                        <button class="prev">❮</button>
-                        <button class="next">❯</button>
-                    </div>
-                </div>
-            </div>
-
         </div>
-
+    <div class="hero-right">
+        <a href="#" class="btn">Get in Touch</a>
     </div>
-
 </section>
-
-
         <!-- Why Choose ISIRI section -->
         <section class="features" id="features">
             <h2>Why Choose ISIRI?</h2>
@@ -180,52 +116,25 @@
         </section>
     </main>
     <!-- Slideshow script -->
-   <script>
-/* ---------------- Accordion ---------------- */
-const headers = document.querySelectorAll(".accordion-header");
-
-headers.forEach(header => {
-    header.addEventListener("click", () => {
-        const content = header.nextElementSibling;
-
-        document.querySelectorAll(".accordion-content").forEach(c => {
-            if (c !== content) c.style.maxHeight = null;
-        });
-
-        if (content.style.maxHeight) {
-            content.style.maxHeight = null;
-        } else {
-            content.style.maxHeight = content.scrollHeight + "px";
+    <script>
+        const slideImages = [
+            'slide2.jpg',
+            'slide3.jpg',
+            'slide4.jpg',
+            'slide5.jpg'
+        ];
+        let slideIndex = 0;
+        const heroRight = document.querySelector('.hero-right');
+        function setSlide() {
+            heroRight.style.backgroundImage = `url('${slideImages[slideIndex]}')`;
+            heroRight.style.backgroundSize = 'cover';
+            heroRight.style.backgroundRepeat = 'no-repeat';
+            heroRight.style.backgroundPosition = 'center';
+            slideIndex = (slideIndex + 1) % slideImages.length;
         }
-    });
-});
-
-/* ---------------- Slider ---------------- */
-document.querySelectorAll(".slider").forEach((slider, index) => {
-
-    let slideIndex = 0;
-    const slides = slider.querySelector(".slides");
-    const images = slider.querySelectorAll("img");
-
-    const prevBtn = slider.querySelector(".prev");
-    const nextBtn = slider.querySelector(".next");
-
-    function updateSlide() {
-        slides.style.transform = `translateX(-${slideIndex * 100}%)`;
-    }
-
-    nextBtn.addEventListener("click", () => {
-        slideIndex = (slideIndex + 1) % images.length;
-        updateSlide();
-    });
-
-    prevBtn.addEventListener("click", () => {
-        slideIndex = (slideIndex - 1 + images.length) % images.length;
-        updateSlide();
-    });
-
-});
-</script>
-
+        // Initialize slideshow
+        setSlide();
+        setInterval(setSlide, 5000);
+    </script>
 </body>
 </html>
