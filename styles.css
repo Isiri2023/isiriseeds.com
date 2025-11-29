@@ -51,104 +51,88 @@ width: 100%;
 scroll-margin-top: 100px;
 }
 
-/* =============================
-  HERO SECTION — 33% / 66%
-============================= */
-/* =============================
-  HERO SECTION — 33% / 66%
-============================= */
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
 
-/* --- Hero Component Structure --- */
-.hero {
-    display: flex;
-    /* Use calc(100vh - 60px) if header height is consistently 60px, 
-       or simply 100vh for full height. I'll use 100vh here for simplicity 
-       and let the content adjust for the fixed header (scroll-margin-top). */
-    height: 100vh; 
-    margin-top: 0;
-    align-items: stretch; 
-    padding: 0;
-    overflow: hidden; 
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
 }
 
-/* --- LEFT SIDE: Logo/Identity Section (33%) --- */
-.hero-left {
-    flex: 0 0 33%;
-    background-color: var(--primary-green); 
-    height: 100%;
-    display: flex;
-    justify-content: left; /* Centering the logo again for clean look */
-    align-items: left;
-    padding: 0;
-    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1); 
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+.btn{
+color : white;
+ font-size: 15px;
+  padding: 8px 12px;
+  position: center;
+  bottom: 8px;
+  width: abosolute;
+  text-align: center;
+  background-color: green;
+  border: none;
+  color: white;
+text-align: center;
+  text-decoration: none;
+  display: inline-block;
+margin: 9px 2px;
+  cursor: pointer;
+  font-style : italic;
 }
 
-/* --- RIGHT SIDE: Content & Image Section (67%) --- */
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
 
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
 
-.hero-right {
-    flex: 1;
-    background-color: var(--light-greenish-white);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: right;
-    align-items: flex-start;
-    padding: 0 8%;
-    position: relative;
-    overflow: hidden;
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
 }
 
 
-/* Optional: Re-add your text styling for H1 and P here if you want the overlay effect */
-.hero-right h1 {
-    z-index: 2; /* Ensure text is above the image and overlay */
-    color: white; /* Change text to white for contrast against the dark overlay */
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Stronger shadow */
-    /* ... other styles */
-}
-
-.hero-right p {
-    z-index: 2;
-    color: #f7fbf2; /* Light color for contrast */
-    /* ... other styles */
-}
-
-/* --- Button Styling --- */
-.btn {
-    background-color: var(--primary-green);
-    color: var(--off-white); /* Use off-white for button text */
-    padding: 15px 35px; /* Slightly more padding */
-    border: none;
-    border-radius: 8px; /* Slightly more rounded corners */
-    text-decoration: none;
-    font-size: 1.05rem;
-    font-weight: 700; /* Bolder text */
-    letter-spacing: 0.5px; /* Subtle letter spacing */
-    cursor: pointer;
-    /* Added a subtle box shadow to make the button lift off the page */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
-    transition: all 0.3s ease; /* Smoother transition */
-}
-
-/* Positioning the button (assuming this is part of the accordion content now) */
-.hero-right .btn {
-    /* If this is a static hero, this absolute positioning might be disruptive. 
-    It's best to remove it unless it's strictly necessary for the accordion functionality. */
-    position: static; 
-    /* Remove absolute positioning lines unless required for specific accordion layout: 
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 40px; 
-    z-index: 10; */
-}
-
-.btn:hover {
-    background-color: var(--secondary-green); /* Darker green on hover */
-    /* Lift the button slightly on hover */
-    transform: translateY(-2px); 
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-}
 /* =============================
   FEATURES SECTION (HOME)
 ============================= */
