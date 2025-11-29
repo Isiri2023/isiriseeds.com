@@ -16,20 +16,119 @@
             <a href="contact.html">Contact</a>
         </nav>
     </header>
-    <section class="features" id="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="slide2.jpg" alt="Seedlings trays and crates in greenhouse">
+    <!-- Dynamic Gallery Hero -->
+    <section class="gallery-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Our Work</div>
+            <h1 class="hero-title">Visual Gallery</h1>
+            <p class="hero-subtitle">Showcasing our premium seed production journey</p>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Dynamic Gallery Section -->
+    <section class="dynamic-gallery">
+        <div class="gallery-header">
+            <h2 class="section-title">Our Production Gallery</h2>
+            <p class="section-desc">From greenhouse to field - witness our quality seed production process</p>
+        </div>
+        
+        <div class="masonry-grid">
+            <div class="gallery-card" data-category="greenhouse">
+                <div class="image-container">
+                    <img src="slide2.jpg" alt="Seedlings trays and crates in greenhouse">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Greenhouse Cultivation</h3>
+                            <p>Controlled environment for optimal growth</p>
+                            <div class="category-tag">Greenhouse</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="gallery-item">
-                <img src="slide3.jpg" alt="Pepper plants in greenhouse with tall stakes">
+            
+            <div class="gallery-card" data-category="greenhouse">
+                <div class="image-container">
+                    <img src="slide3.jpg" alt="Pepper plants in greenhouse with tall stakes">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Pepper Cultivation</h3>
+                            <p>Advanced staking systems for healthy growth</p>
+                            <div class="category-tag">Greenhouse</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="gallery-item">
-                <img src="slide4.jpg" alt="Pepper seedlings planted in rows in field">
+            
+            <div class="gallery-card" data-category="field">
+                <div class="image-container">
+                    <img src="slide4.jpg" alt="Pepper seedlings planted in rows in field">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Field Plantation</h3>
+                            <p>Systematic row planting for maximum yield</p>
+                            <div class="category-tag">Field</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-card" data-category="field">
+                <div class="image-container">
+                    <img src="slide5.jpg" alt="Pepper seedlings planted in rows in field">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Crop Management</h3>
+                            <p>Professional field management techniques</p>
+                            <div class="category-tag">Field</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-card" data-category="production">
+                <div class="image-container">
+                    <img src="ISIRI 4.jpg" alt="Pepper seedlings planted in rows in field">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <h3>Quality Production</h3>
+                            <p>Premium seed production standards</p>
+                            <div class="category-tag">Production</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+    <script>
+        // Gallery animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.gallery-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(50px)';
+                card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                observer.observe(card);
+            });
+        });
+    </script>
 </body>
 </html>
 
