@@ -59,12 +59,10 @@ img {vertical-align: middle;}
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
-  position: relative;
-  margin-left: 190px;
-  margin-right: 30px;
-  margin-top: 200px;
+  position:  absolute;
+  margin: auto;
+  top: 120px;
 }
-
 
 /* Caption text */
 .text {
