@@ -1285,3 +1285,20 @@ padding: 40px 0;
 padding: 40px 5%;
 }
 }
+
+/* =============================
+  FOOTER
+============================= */
+footer {
+background: #0e6b23;
+color: white;
+text-align: center;
+padding: 20px 5%;
+margin-top: 0;
+}
+
+footer p {
+margin: 0;
+font-size: 0.9rem;
+opacity: 0.9;
+}
