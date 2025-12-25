@@ -13,7 +13,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 100%);
             color: #1b5e20;
             overflow-x: hidden;
@@ -27,7 +27,7 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             z-index: 1000;
-            padding: 12px 0;
+            padding: 15px 0;
             box-shadow: 0 2px 20px rgba(46, 125, 50, 0.1);
         }
 
@@ -41,26 +41,41 @@
         }
 
         .logo {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: #2e7d32;
         }
 
         nav {
             display: flex;
-            gap: 25px;
+            gap: 30px;
         }
 
         nav a {
             text-decoration: none;
             color: #2e7d32;
             font-weight: 600;
-            font-size: 14px;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         nav a:hover {
             color: #1b5e20;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #43a047;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
         }
 
         /* Hero Section */
