@@ -300,50 +300,28 @@
         /* Team Section */
         .team {
             padding: 50px 20px;
-            background: linear-gradient(135deg, #f8faf7 0%, #f2f7f0 50%, #ecf4e9 100%);
+            background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 50%, #e8eaed 100%);
             position: relative;
-            overflow: hidden;
-        }
-
-        .team::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="g"><stop offset="0%" stop-color="rgba(139,154,139,0.06)"/><stop offset="100%" stop-color="transparent"/></radialGradient></defs><circle cx="20" cy="20" r="2" fill="url(%23g)"/><circle cx="80" cy="80" r="1.5" fill="url(%23g)"/><circle cx="40" cy="60" r="1" fill="url(%23g)"/></svg>');
-            animation: sparkle 15s ease-in-out infinite;
-        }
-
-        @keyframes sparkle {
-            0%, 100% { opacity: 0.2; transform: translateY(0px); }
-            50% { opacity: 0.4; transform: translateY(-2px); }
         }
 
         .team-header {
             text-align: center;
             margin-bottom: 40px;
-            position: relative;
-            z-index: 2;
         }
 
         .team-header .section-badge {
-            background: linear-gradient(135deg, #f2f7f0, #ecf4e9);
-            color: #7a8471;
-            border: 1px solid rgba(122, 132, 113, 0.15);
-            backdrop-filter: blur(10px);
-            padding: 4px 12px;
-            font-size: 11px;
+            background: #ffffff;
+            color: #5f6368;
+            border: 1px solid #dadce0;
+            padding: 6px 16px;
+            font-size: 12px;
+            font-weight: 500;
         }
 
         .team-header h2 {
             font-size: 2rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #5a6b52, #7a8471);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-weight: 600;
+            color: #3c4043;
             margin-bottom: 10px;
             letter-spacing: -0.5px;
         }
@@ -352,181 +330,111 @@
             max-width: 1100px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            position: relative;
-            z-index: 2;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
         }
 
         .team-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(122, 132, 113, 0.08);
-            border-radius: 16px;
-            padding: 20px 16px;
+            background: #ffffff;
+            border: 1px solid #dadce0;
+            border-radius: 12px;
+            padding: 24px 20px;
             text-align: center;
-            box-shadow: 0 8px 25px rgba(122, 132, 113, 0.08);
-            transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+            box-shadow: 0 2px 8px rgba(60, 64, 67, 0.1);
+            transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
-        }
-
-        .team-card::before {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: -1px;
-            right: -1px;
-            bottom: -1px;
-            background: linear-gradient(45deg, #c8d4c2, #b8c7b0, #7a8471, #9aab92);
-            border-radius: 17px;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .team-card:hover::before {
-            opacity: 1;
-        }
-
-        .team-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(242, 247, 240, 0.5), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .team-card:hover::after {
-            left: 100%;
         }
 
         .team-card:hover {
-            transform: translateY(-6px) scale(1.01);
-            box-shadow: 0 12px 35px rgba(122, 132, 113, 0.12);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(60, 64, 67, 0.15);
         }
 
         .team-avatar {
-            width: 65px;
-            height: 65px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #7a8471, #9aab92);
-            margin: 0 auto 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin: 0 auto 16px;
             position: relative;
-            box-shadow: 0 6px 18px rgba(122, 132, 113, 0.15);
-            transition: all 0.3s ease;
-        }
-
-        .team-card:hover .team-avatar {
-            transform: scale(1.08) rotate(3deg);
-            box-shadow: 0 8px 25px rgba(122, 132, 113, 0.2);
-        }
-
-        .team-avatar::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #c8d4c2, #b8c7b0, #7a8471, #9aab92);
-            z-index: -1;
-            animation: rotate-border 5s linear infinite;
-        }
-
-        @keyframes rotate-border {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            overflow: hidden;
+            border: 3px solid #ffffff;
+            box-shadow: 0 4px 12px rgba(60, 64, 67, 0.1);
         }
 
         .team-avatar img {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border: 2px solid rgba(255, 255, 255, 0.9);
         }
 
         .exp-tag {
             position: absolute;
-            top: -4px;
-            right: -4px;
-            background: linear-gradient(135deg, #5a6b52, #7a8471);
+            top: -6px;
+            right: -6px;
+            background: #1a73e8;
             color: white;
-            font-size: 8px;
-            font-weight: 700;
-            padding: 3px 6px;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px rgba(90, 107, 82, 0.25);
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from { box-shadow: 0 3px 12px rgba(90, 107, 82, 0.25); }
-            to { box-shadow: 0 4px 16px rgba(90, 107, 82, 0.35); }
+            font-size: 9px;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(26, 115, 232, 0.3);
         }
 
         .team-card h3 {
-            font-size: 0.95rem;
-            color: #5a6b52;
+            font-size: 16px;
+            color: #202124;
             margin-bottom: 4px;
             font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .team-card:hover h3 {
-            color: #7a8471;
-            transform: scale(1.02);
         }
 
         .team-role {
-            color: #9aab92;
-            font-size: 10px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
+            color: #5f6368;
+            font-size: 13px;
+            font-weight: 400;
+            margin-bottom: 16px;
         }
 
         .team-desc {
-            font-size: 10px;
-            color: #7a8471;
-            line-height: 1.4;
-            margin-bottom: 12px;
+            font-size: 12px;
+            color: #5f6368;
+            line-height: 1.5;
+            margin-bottom: 20px;
         }
 
-        .skills {
+        .social-links {
             display: flex;
-            gap: 4px;
+            gap: 8px;
             justify-content: center;
-            flex-wrap: wrap;
         }
 
-        .skill {
-            background: linear-gradient(135deg, #f2f7f0, #ecf4e9);
-            backdrop-filter: blur(8px);
-            color: #7a8471;
-            padding: 3px 8px;
-            border-radius: 10px;
-            font-size: 8px;
-            font-weight: 600;
-            box-shadow: 0 2px 8px rgba(122, 132, 113, 0.08);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(122, 132, 113, 0.1);
-        }
-
-        .skill:hover {
-            transform: translateY(-1px) scale(1.02);
-            box-shadow: 0 3px 12px rgba(122, 132, 113, 0.12);
-            background: linear-gradient(135deg, #7a8471, #9aab92);
+        .social-link {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 14px;
             color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link.facebook {
+            background: #1877f2;
+        }
+
+        .social-link.twitter {
+            background: #1da1f2;
+        }
+
+        .social-link.email {
+            background: #ea4335;
+        }
+
+        .social-link:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         /* Footer */
@@ -640,9 +548,10 @@
                 <h3>Basavaraj Hundekar</h3>
                 <div class="team-role">Founder & CEO</div>
                 <p class="team-desc">Master's in Agriculture and Business Administration with experience of over 30 years in seed production for overseas MNCs.</p>
-                <div class="skills">
-                    <span class="skill">Seed Production</span>
-                    <span class="skill">Leadership</span>
+                <div class="social-links">
+                    <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
             
@@ -654,9 +563,10 @@
                 <h3>Sanjeev Kumar Patil</h3>
                 <div class="team-role">Team Manager</div>
                 <p class="team-desc">Master's in Agriculture with expertise in agronomy and crop management.</p>
-                <div class="skills">
-                    <span class="skill">Agronomy</span>
-                    <span class="skill">Management</span>
+                <div class="social-links">
+                    <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
             
@@ -668,9 +578,10 @@
                 <h3>Maruthi H.B.</h3>
                 <div class="team-role">Team Lead</div>
                 <p class="team-desc">Expert in crop management and field quality with 25+ years of experience.</p>
-                <div class="skills">
-                    <span class="skill">Crop Management</span>
-                    <span class="skill">Field Quality</span>
+                <div class="social-links">
+                    <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
             
@@ -682,9 +593,10 @@
                 <h3>Hanumesh G.</h3>
                 <div class="team-role">Team Member</div>
                 <p class="team-desc">Specializes in crop management and field quality operations.</p>
-                <div class="skills">
-                    <span class="skill">Crop Management</span>
-                    <span class="skill">Field Quality</span>
+                <div class="social-links">
+                    <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
             
@@ -696,9 +608,10 @@
                 <h3>Manjunath N.</h3>
                 <div class="team-role">Team Member</div>
                 <p class="team-desc">Specializes in crop management and field quality operations.</p>
-                <div class="skills">
-                    <span class="skill">Crop Management</span>
-                    <span class="skill">Field Quality</span>
+                <div class="social-links">
+                    <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
             
@@ -710,9 +623,10 @@
                 <h3>Manjunath R.</h3>
                 <div class="team-role">Team Member</div>
                 <p class="team-desc">Specializes in crop management and field quality operations.</p>
-                <div class="skills">
-                    <span class="skill">Crop Management</span>
-                    <span class="skill">Field Quality</span>
+                <div class="social-links">
+                    <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
             
@@ -724,9 +638,10 @@
                 <h3>Siddappa G.</h3>
                 <div class="team-role">Team Member</div>
                 <p class="team-desc">Specializes in crop management and field quality operations.</p>
-                <div class="skills">
-                    <span class="skill">Crop Management</span>
-                    <span class="skill">Field Quality</span>
+                <div class="social-links">
+                    <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
             
@@ -738,9 +653,10 @@
                 <h3>Saaish B.</h3>
                 <div class="team-role">Team Member</div>
                 <p class="team-desc">Specializes in seed quality testing and quality assurance.</p>
-                <div class="skills">
-                    <span class="skill">Seed Quality Testing</span>
-                    <span class="skill">Quality Assurance</span>
+                <div class="social-links">
+                    <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
             
@@ -752,9 +668,10 @@
                 <h3>Shreya Hundekar</h3>
                 <div class="team-role">Team Member</div>
                 <p class="team-desc">Specializes in seed processing, packing and dispatches with 25+ years experience.</p>
-                <div class="skills">
-                    <span class="skill">Seed Processing</span>
-                    <span class="skill">Packing & Dispatches</span>
+                <div class="social-links">
+                    <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </div>
