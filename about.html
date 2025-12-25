@@ -300,7 +300,7 @@
         /* Team Section */
         .team {
             padding: 100px 20px;
-            background: radial-gradient(ellipse at center, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
             position: relative;
             overflow: hidden;
         }
@@ -312,13 +312,13 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="g"><stop offset="0%" stop-color="rgba(255,255,255,0.1)"/><stop offset="100%" stop-color="transparent"/></radialGradient></defs><circle cx="20" cy="20" r="2" fill="url(%23g)"/><circle cx="80" cy="80" r="1.5" fill="url(%23g)"/><circle cx="40" cy="60" r="1" fill="url(%23g)"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="g"><stop offset="0%" stop-color="rgba(108,117,125,0.1)"/><stop offset="100%" stop-color="transparent"/></radialGradient></defs><circle cx="20" cy="20" r="2" fill="url(%23g)"/><circle cx="80" cy="80" r="1.5" fill="url(%23g)"/><circle cx="40" cy="60" r="1" fill="url(%23g)"/></svg>');
             animation: sparkle 15s ease-in-out infinite;
         }
 
         @keyframes sparkle {
             0%, 100% { opacity: 0.3; transform: translateY(0px); }
-            50% { opacity: 0.8; transform: translateY(-5px); }
+            50% { opacity: 0.6; transform: translateY(-5px); }
         }
 
         .team-header {
@@ -329,22 +329,21 @@
         }
 
         .team-header .section-badge {
-            background: rgba(255, 255, 255, 0.15);
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(248, 249, 250, 0.9);
+            color: #495057;
+            border: 1px solid rgba(108, 117, 125, 0.2);
             backdrop-filter: blur(10px);
         }
 
         .team-header h2 {
             font-size: 3.5rem;
             font-weight: 900;
-            background: linear-gradient(135deg, #ffffff, #e0e0e0);
+            background: linear-gradient(135deg, #343a40, #495057);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 20px;
             letter-spacing: -2px;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .team-grid {
@@ -358,13 +357,13 @@
         }
 
         .team-card {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(108, 117, 125, 0.15);
             border-radius: 30px;
             padding: 40px 30px;
             text-align: center;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 60px rgba(108, 117, 125, 0.15);
             transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
             position: relative;
             overflow: hidden;
@@ -377,7 +376,7 @@
             left: -2px;
             right: -2px;
             bottom: -2px;
-            background: linear-gradient(45deg, #ff6b35, #f7931e, #2e7d32, #43a047);
+            background: linear-gradient(45deg, #adb5bd, #6c757d, #495057, #343a40);
             border-radius: 32px;
             z-index: -1;
             opacity: 0;
@@ -395,7 +394,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(248, 249, 250, 0.8), transparent);
             transition: left 0.8s ease;
         }
 
@@ -405,26 +404,26 @@
 
         .team-card:hover {
             transform: translateY(-20px) scale(1.03);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 30px 80px rgba(108, 117, 125, 0.25);
         }
 
         .team-avatar {
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            background: linear-gradient(135deg, #6c757d, #495057);
             margin: 0 auto 25px;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+            box-shadow: 0 15px 40px rgba(108, 117, 125, 0.3);
             transition: all 0.5s ease;
         }
 
         .team-card:hover .team-avatar {
             transform: scale(1.15) rotate(10deg);
-            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.6);
+            box-shadow: 0 20px 60px rgba(108, 117, 125, 0.4);
         }
 
         .team-avatar::before {
@@ -435,7 +434,7 @@
             right: -5px;
             bottom: -5px;
             border-radius: 50%;
-            background: linear-gradient(45deg, #ff6b35, #f7931e, #2e7d32, #43a047);
+            background: linear-gradient(45deg, #adb5bd, #6c757d, #495057, #343a40);
             z-index: -1;
             animation: rotate-border 3s linear infinite;
         }
@@ -457,51 +456,48 @@
             position: absolute;
             top: -10px;
             right: -10px;
-            background: linear-gradient(135deg, #2e7d32, #43a047);
+            background: linear-gradient(135deg, #495057, #343a40);
             color: white;
             font-size: 12px;
             font-weight: 800;
             padding: 8px 12px;
             border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(46, 125, 50, 0.5);
+            box-shadow: 0 8px 25px rgba(73, 80, 87, 0.4);
             animation: glow 2s ease-in-out infinite alternate;
         }
 
         @keyframes glow {
-            from { box-shadow: 0 8px 25px rgba(46, 125, 50, 0.5); }
-            to { box-shadow: 0 8px 35px rgba(46, 125, 50, 0.8); }
+            from { box-shadow: 0 8px 25px rgba(73, 80, 87, 0.4); }
+            to { box-shadow: 0 8px 35px rgba(73, 80, 87, 0.6); }
         }
 
         .team-card h3 {
             font-size: 1.6rem;
-            color: #ffffff;
+            color: #343a40;
             margin-bottom: 10px;
             font-weight: 700;
             transition: all 0.3s ease;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .team-card:hover h3 {
-            color: #f7931e;
+            color: #495057;
             transform: scale(1.05);
         }
 
         .team-role {
-            color: #ff6b35;
+            color: #6c757d;
             font-size: 16px;
             font-weight: 600;
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .team-desc {
             font-size: 15px;
-            color: rgba(255, 255, 255, 0.8);
+            color: #6c757d;
             line-height: 1.6;
             margin-bottom: 25px;
-            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
         }
 
         .skills {
@@ -512,22 +508,22 @@
         }
 
         .skill {
-            background: linear-gradient(135deg, rgba(46, 125, 50, 0.8), rgba(67, 160, 71, 0.8));
+            background: linear-gradient(135deg, rgba(108, 117, 125, 0.1), rgba(173, 181, 189, 0.1));
             backdrop-filter: blur(10px);
-            color: white;
+            color: #495057;
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 13px;
             font-weight: 600;
-            box-shadow: 0 6px 20px rgba(46, 125, 50, 0.3);
+            box-shadow: 0 6px 20px rgba(108, 117, 125, 0.1);
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(108, 117, 125, 0.2);
         }
 
         .skill:hover {
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(46, 125, 50, 0.5);
-            background: linear-gradient(135deg, rgba(67, 160, 71, 0.9), rgba(76, 175, 80, 0.9));
+            box-shadow: 0 8px 25px rgba(108, 117, 125, 0.2);
+            background: linear-gradient(135deg, rgba(173, 181, 189, 0.2), rgba(108, 117, 125, 0.2));
         }
 
         /* Footer */
