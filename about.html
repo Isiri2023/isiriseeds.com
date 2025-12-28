@@ -100,26 +100,66 @@
             </div>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+                <style>
+                @media (max-width: 768px) {
+                    .detail-card {
+                        padding: 20px 15px !important;
+                    }
+                    .detail-card h4 {
+                        font-size: 1rem !important;
+                    }
+                    .detail-card p {
+                        font-size: 0.8rem !important;
+                    }
+                    .detail-card span {
+                        font-size: 0.65rem !important;
+                        padding: 3px 8px !important;
+                    }
+                }
+                @media (max-width: 480px) {
+                    .detail-card {
+                        padding: 15px 10px !important;
+                    }
+                    .detail-card div[style*="width: 80px"] {
+                        width: 60px !important;
+                        height: 60px !important;
+                    }
+                    .detail-card i {
+                        font-size: 1.5rem !important;
+                    }
+                }
+                </style>
+                <!-- Founder & CEO -->
                 <div class="detail-card" style="text-align: center; padding: 30px 20px;">
                     <div style="width: 80px; height: 80px; margin: 0 auto 15px; background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative;">
                         <i class="fas fa-user-tie" style="font-size: 2rem; color: #4CAF50;"></i>
-                        <div style="position: absolute; bottom: -5px; right: -5px; background: linear-gradient(135deg, #4CAF50, #8BC34A); color: white; padding: 4px 8px; border-radius: 10px; font-size: 0.7rem; font-weight: 600;">30+</div>
+                        <div style="position: absolute; bottom: -5px; right: -5px; background: linear-gradient(135deg, #4CAF50, #8BC34A); color: white; padding: 4px 8px; border-radius: 10px; font-size: 0.7rem; font-weight: 600;">25+</div>
                     </div>
                     <h4 style="color: #0e6b23; margin-bottom: 5px; font-size: 1.1rem;">Basavaraj Hundekar</h4>
                     <p style="color: #4CAF50; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px; text-transform: uppercase;">Founder & CEO</p>
-                    <p style="font-size: 0.85rem; line-height: 1.5;">Master's in Agriculture and Business Administration with over 30 years in seed production for overseas MNCs.</p>
+                    <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 10px;">Master's in Agriculture and Business Administration with experience of over 30 years in seed production for overseas MNCs.</p>
+                    <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+                        <span style="background: rgba(76,175,80,0.1); color: #4CAF50; padding: 4px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 600;">Seed Production</span>
+                        <span style="background: rgba(76,175,80,0.1); color: #4CAF50; padding: 4px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 600;">Leadership</span>
+                    </div>
                 </div>
                 
+                <!-- Team Manager -->
                 <div class="detail-card" style="text-align: center; padding: 30px 20px;">
                     <div style="width: 80px; height: 80px; margin: 0 auto 15px; background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative;">
                         <i class="fas fa-user-graduate" style="font-size: 2rem; color: #4CAF50;"></i>
-                        <div style="position: absolute; bottom: -5px; right: -5px; background: linear-gradient(135deg, #4CAF50, #8BC34A); color: white; padding: 4px 8px; border-radius: 10px; font-size: 0.7rem; font-weight: 600;">15+</div>
+                        <div style="position: absolute; bottom: -5px; right: -5px; background: linear-gradient(135deg, #4CAF50, #8BC34A); color: white; padding: 4px 8px; border-radius: 10px; font-size: 0.7rem; font-weight: 600;">10+</div>
                     </div>
                     <h4 style="color: #0e6b23; margin-bottom: 5px; font-size: 1.1rem;">Sanjeev Kumar Patil</h4>
                     <p style="color: #4CAF50; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px; text-transform: uppercase;">Team Manager</p>
-                    <p style="font-size: 0.85rem; line-height: 1.5;">Master's in Agriculture with expertise in agronomy and crop management.</p>
+                    <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 10px;">Master's in Agriculture with expertise in agronomy and crop management.</p>
+                    <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+                        <span style="background: rgba(76,175,80,0.1); color: #4CAF50; padding: 4px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 600;">Agronomy</span>
+                        <span style="background: rgba(76,175,80,0.1); color: #4CAF50; padding: 4px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 600;">Management</span>
+                    </div>
                 </div>
                 
+                <!-- Team Lead -->
                 <div class="detail-card" style="text-align: center; padding: 30px 20px;">
                     <div style="width: 80px; height: 80px; margin: 0 auto 15px; background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative;">
                         <i class="fas fa-user-cog" style="font-size: 2rem; color: #4CAF50;"></i>
@@ -127,49 +167,30 @@
                     </div>
                     <h4 style="color: #0e6b23; margin-bottom: 5px; font-size: 1.1rem;">Maruthi H.B.</h4>
                     <p style="color: #4CAF50; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px; text-transform: uppercase;">Team Lead</p>
-                    <p style="font-size: 0.85rem; line-height: 1.5;">Specializes in crop management and field quality operations.</p>
+                    <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 10px;">Specializes in crop management and field quality operations.</p>
+                    <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+                        <span style="background: rgba(76,175,80,0.1); color: #4CAF50; padding: 4px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 600;">Crop Management</span>
+                        <span style="background: rgba(76,175,80,0.1); color: #4CAF50; padding: 4px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 600;">Field Quality</span>
+                    </div>
                 </div>
                 
+                <!-- Team Members Group -->
                 <div class="detail-card" style="text-align: center; padding: 30px 20px;">
                     <div style="width: 80px; height: 80px; margin: 0 auto 15px; background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative;">
-                        <i class="fas fa-user" style="font-size: 2rem; color: #4CAF50;"></i>
+                        <i class="fas fa-users" style="font-size: 2rem; color: #4CAF50;"></i>
                         <div style="position: absolute; bottom: -5px; right: -5px; background: linear-gradient(135deg, #4CAF50, #8BC34A); color: white; padding: 4px 8px; border-radius: 10px; font-size: 0.7rem; font-weight: 600;">Expert</div>
                     </div>
-                    <h4 style="color: #0e6b23; margin-bottom: 5px; font-size: 1.1rem;">Hanumesh G.</h4>
-                    <p style="color: #4CAF50; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px; text-transform: uppercase;">Team Member</p>
-                    <p style="font-size: 0.85rem; line-height: 1.5;">Specializes in crop management and field quality operations.</p>
-                </div>
-                
-                <div class="detail-card" style="text-align: center; padding: 30px 20px;">
-                    <div style="width: 80px; height: 80px; margin: 0 auto 15px; background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative;">
-                        <i class="fas fa-user" style="font-size: 2rem; color: #4CAF50;"></i>
-                        <div style="position: absolute; bottom: -5px; right: -5px; background: linear-gradient(135deg, #4CAF50, #8BC34A); color: white; padding: 4px 8px; border-radius: 10px; font-size: 0.7rem; font-weight: 600;">Expert</div>
+                    <h4 style="color: #0e6b23; margin-bottom: 5px; font-size: 1.1rem;">Field Operations Team</h4>
+                    <p style="color: #4CAF50; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px; text-transform: uppercase;">Team Members</p>
+                    <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 10px;">Hanumesh G. • Manjunath N. • Manjunath R. • Siddappa G.</p>
+                    <p style="font-size: 0.8rem; color: #666; margin-bottom: 10px;">Specializes in crop management and field quality operations.</p>
+                    <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+                        <span style="background: rgba(76,175,80,0.1); color: #4CAF50; padding: 4px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 600;">Crop Management</span>
+                        <span style="background: rgba(76,175,80,0.1); color: #4CAF50; padding: 4px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 600;">Field Quality</span>
                     </div>
-                    <h4 style="color: #0e6b23; margin-bottom: 5px; font-size: 1.1rem;">Manjunath N.</h4>
-                    <p style="color: #4CAF50; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px; text-transform: uppercase;">Team Member</p>
-                    <p style="font-size: 0.85rem; line-height: 1.5;">Specializes in crop management and field quality operations.</p>
                 </div>
                 
-                <div class="detail-card" style="text-align: center; padding: 30px 20px;">
-                    <div style="width: 80px; height: 80px; margin: 0 auto 15px; background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative;">
-                        <i class="fas fa-user" style="font-size: 2rem; color: #4CAF50;"></i>
-                        <div style="position: absolute; bottom: -5px; right: -5px; background: linear-gradient(135deg, #4CAF50, #8BC34A); color: white; padding: 4px 8px; border-radius: 10px; font-size: 0.7rem; font-weight: 600;">Expert</div>
-                    </div>
-                    <h4 style="color: #0e6b23; margin-bottom: 5px; font-size: 1.1rem;">Manjunath R.</h4>
-                    <p style="color: #4CAF50; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px; text-transform: uppercase;">Team Member</p>
-                    <p style="font-size: 0.85rem; line-height: 1.5;">Specializes in crop management and field quality operations.</p>
-                </div>
-                
-                <div class="detail-card" style="text-align: center; padding: 30px 20px;">
-                    <div style="width: 80px; height: 80px; margin: 0 auto 15px; background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative;">
-                        <i class="fas fa-user" style="font-size: 2rem; color: #4CAF50;"></i>
-                        <div style="position: absolute; bottom: -5px; right: -5px; background: linear-gradient(135deg, #4CAF50, #8BC34A); color: white; padding: 4px 8px; border-radius: 10px; font-size: 0.7rem; font-weight: 600;">Expert</div>
-                    </div>
-                    <h4 style="color: #0e6b23; margin-bottom: 5px; font-size: 1.1rem;">Siddappa G.</h4>
-                    <p style="color: #4CAF50; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px; text-transform: uppercase;">Team Member</p>
-                    <p style="font-size: 0.85rem; line-height: 1.5;">Specializes in crop management and field quality operations.</p>
-                </div>
-                
+                <!-- Quality Testing -->
                 <div class="detail-card" style="text-align: center; padding: 30px 20px;">
                     <div style="width: 80px; height: 80px; margin: 0 auto 15px; background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative;">
                         <i class="fas fa-flask" style="font-size: 2rem; color: #4CAF50;"></i>
@@ -177,9 +198,13 @@
                     </div>
                     <h4 style="color: #0e6b23; margin-bottom: 5px; font-size: 1.1rem;">Saaish B.</h4>
                     <p style="color: #4CAF50; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px; text-transform: uppercase;">Team Member</p>
-                    <p style="font-size: 0.85rem; line-height: 1.5;">Specializes in seed quality testing and laboratory analysis.</p>
+                    <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 10px;">Specializes in seed quality testing.</p>
+                    <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+                        <span style="background: rgba(76,175,80,0.1); color: #4CAF50; padding: 4px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 600;">Quality Testing</span>
+                    </div>
                 </div>
                 
+                <!-- Processing & Packaging -->
                 <div class="detail-card" style="text-align: center; padding: 30px 20px;">
                     <div style="width: 80px; height: 80px; margin: 0 auto 15px; background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative;">
                         <i class="fas fa-user-circle" style="font-size: 2rem; color: #4CAF50;"></i>
@@ -187,7 +212,11 @@
                     </div>
                     <h4 style="color: #0e6b23; margin-bottom: 5px; font-size: 1.1rem;">Shreya Hundekar</h4>
                     <p style="color: #4CAF50; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px; text-transform: uppercase;">Team Member</p>
-                    <p style="font-size: 0.85rem; line-height: 1.5;">Specializes in seed processing, packing and dispatches.</p>
+                    <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 10px;">Specializes in seed processing, packing and dispatches.</p>
+                    <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+                        <span style="background: rgba(76,175,80,0.1); color: #4CAF50; padding: 4px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 600;">Processing</span>
+                        <span style="background: rgba(76,175,80,0.1); color: #4CAF50; padding: 4px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 600;">Packaging</span>
+                    </div>
                 </div>
             </div>
         </div>
