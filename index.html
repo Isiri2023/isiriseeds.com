@@ -30,33 +30,10 @@ header {
   align-items: center;
 }
 .logo {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 900;
-  letter-spacing: 2px;
-  background: linear-gradient(135deg, #1b5e20, #2e7d32, #43a047, #66bb6a);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  position: relative;
-  padding: 8px 20px;
-  border-radius: 10px;
-  animation: logoGlow 3s ease-in-out infinite;
-}
-.logo::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(46,125,50,0.1), rgba(67,160,71,0.1));
-  border-radius: 10px;
-  z-index: -1;
-  box-shadow: 0 5px 20px rgba(46,125,50,0.2);
-}
-@keyframes logoGlow {
-  0%, 100% { filter: brightness(1); }
-  50% { filter: brightness(1.2); }
+  letter-spacing: 1px;
+  color: #1b5e20;
 }
 nav {
   display: flex;
@@ -65,24 +42,12 @@ nav {
 }
 nav a {
   text-decoration: none;
-  color: #1b5e20;
+  color: #333;
   font-weight: 600;
-  font-size: 0.9rem;
-  position: relative;
+  font-size: 1rem;
   transition: color 0.3s ease;
 }
-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #2e7d32, #66bb6a);
-  transition: width 0.3s ease;
-}
-nav a:hover::after { width: 100%; }
-nav a:hover { color: #2e7d32; }
+nav a:hover { color: #1b5e20; }
 
 /* Hero Section */
 .hero {
