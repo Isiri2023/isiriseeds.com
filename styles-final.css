@@ -592,7 +592,7 @@ box-shadow: 0 8px 25px rgba(76,175,80,0.3);
 ============================= */
 .team-preview {
 padding: 60px 5%;
-background: linear-gradient(135deg, #f8fbe8 0%, #e8f5e8 100%);
+background: #ffffff;
 }
 
 .team-container {
@@ -836,7 +836,7 @@ font-weight: 300;
 
 .compact-about {
 padding: 80px 5%;
-background: linear-gradient(135deg, #ffffff 0%, #f8fbe8 50%, #ffffff 100%);
+background: #ffffff;
 }
 
 .about-wrapper {
@@ -974,7 +974,7 @@ margin-right: 8px;
 
 .leadership-section {
 padding: 80px 5%;
-background: linear-gradient(135deg, #f8fbe8 0%, #e8f5e8 100%);
+background: #ffffff;
 }
 
 .leadership-header {
@@ -1150,7 +1150,7 @@ margin-bottom: 12px;
 
 .dynamic-gallery {
 padding: 40px 5%;
-background: linear-gradient(135deg, #f8fbe8 0%, #ffffff 100%);
+background: #ffffff;
 }
 
 .gallery-header {
@@ -1335,7 +1335,7 @@ animation: heroGlow 8s ease-in-out infinite;
 
 .dynamic-services {
 padding: 80px 5%;
-background: linear-gradient(135deg, #f8fbe8 0%, #ffffff 50%, #e8f5e8 100%);
+background: #ffffff;
 }
 
 .services-header {
