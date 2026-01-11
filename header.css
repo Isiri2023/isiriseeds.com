@@ -44,6 +44,19 @@ nav a {
 
 nav a:hover { color: #1b5e20; }
 
+footer {
+  background: #1b5e20;
+  color: white;
+  text-align: center;
+  padding: 30px 5%;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1024px) {
+  .header-content { flex-direction: column; gap: 15px; }
+  nav { gap: 20px; flex-wrap: wrap; }
+}
+
 @media (max-width: 768px) {
   .header-content { flex-direction: column; gap: 15px; }
   nav { gap: 20px; flex-wrap: wrap; }
