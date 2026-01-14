@@ -9,22 +9,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        .about-wrapper {
-            max-width: 1100px;
+        .about-section {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 50px 5%;
+            padding: 60px 5%;
             margin-top: 70px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 50px;
             align-items: center;
         }
 
         .about-image {
             position: relative;
-            border-radius: 12px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            transition: transform 0.4s ease;
+        }
+
+        .about-image:hover {
+            transform: translateY(-8px);
         }
 
         .about-image img {
@@ -35,124 +40,156 @@
 
         .stats-overlay {
             position: absolute;
-            bottom: 20px;
-            right: 20px;
+            bottom: 25px;
+            right: 25px;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
 
         .stat {
-            background: rgba(255,255,255,0.95);
-            padding: 12px 16px;
-            border-radius: 8px;
+            background: rgba(255,255,255,0.98);
+            padding: 14px 18px;
+            border-radius: 10px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            backdrop-filter: blur(10px);
         }
 
         .stat span {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: #4CAF50;
             display: block;
         }
 
-        .stat span + * {
-            font-size: 0.8rem;
+        .stat::after {
+            content: attr(data-label);
+            font-size: 0.75rem;
             color: #666;
+            font-weight: 600;
         }
 
         .about-text h2 {
-            font-size: 2rem;
+            font-size: 2.3rem;
             color: #0e6b23;
-            margin: 0 0 15px 0;
+            margin: 0 0 20px 0;
             font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .about-text h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(90deg, #4CAF50, #8BC34A);
+            margin-top: 12px;
+            border-radius: 2px;
         }
 
         .about-text p {
-            font-size: 0.95rem;
-            color: #666;
-            line-height: 1.6;
-            margin: 0 0 20px 0;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.7;
+            margin: 20px 0;
         }
 
         .quick-features {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
+            margin-top: 25px;
         }
 
         .feature {
-            background: #f0f8f0;
+            background: linear-gradient(135deg, rgba(76,175,80,0.08), rgba(139,195,74,0.08));
             color: #0e6b23;
-            padding: 8px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+            padding: 10px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 6px;
-            border: 1px solid rgba(76,175,80,0.2);
+            gap: 8px;
+            border: 1.5px solid rgba(76,175,80,0.2);
             transition: all 0.3s ease;
         }
 
         .feature:hover {
-            background: #4CAF50;
+            background: linear-gradient(135deg, #4CAF50, #8BC34A);
             color: white;
+            border-color: transparent;
+            transform: translateY(-2px);
         }
 
         .leadership-section {
-            padding: 50px 5%;
-            background: #f9f9f9;
+            padding: 60px 5%;
+            background: linear-gradient(135deg, #f8fbe8 0%, #ffffff 100%);
         }
 
         .leadership-header {
             text-align: center;
-            margin-bottom: 40px;
-            max-width: 1100px;
+            margin-bottom: 50px;
+            max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .leadership-header h2 {
-            font-size: 2rem;
+            font-size: 2.3rem;
             color: #0e6b23;
             margin: 0;
             font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        .leadership-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(90deg, #4CAF50, #8BC34A);
+            border-radius: 2px;
         }
 
         .leadership-grid {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 25px;
             padding: 0 5%;
         }
 
         .leader-card {
             background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
-            text-align: center;
-            border: 1px solid #f0f0f0;
+            border: 1px solid rgba(76,175,80,0.1);
         }
 
         .leader-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(76,175,80,0.12);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(76,175,80,0.15);
+            border-color: rgba(76,175,80,0.2);
         }
 
         .leader-avatar {
             position: relative;
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 15px;
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 18px;
             border-radius: 50%;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+            border: 3px solid rgba(76,175,80,0.1);
         }
 
         .leader-avatar img {
@@ -163,64 +200,69 @@
 
         .experience-tag {
             position: absolute;
-            bottom: -5px;
-            right: -5px;
-            background: #4CAF50;
+            bottom: -8px;
+            right: -8px;
+            background: linear-gradient(135deg, #4CAF50, #8BC34A);
             color: white;
-            padding: 3px 8px;
-            border-radius: 8px;
-            font-size: 0.65rem;
-            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(76,175,80,0.3);
         }
 
         .leader-info h3 {
-            font-size: 1.05rem;
+            font-size: 1.15rem;
             color: #0e6b23;
-            margin: 0 0 5px 0;
-            font-weight: 600;
+            margin: 0 0 6px 0;
+            font-weight: 700;
         }
 
         .role {
-            color: #666;
-            font-size: 0.8rem;
+            color: #4CAF50;
+            font-size: 0.85rem;
             display: block;
-            margin-bottom: 10px;
-            font-weight: 500;
+            margin-bottom: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .leader-info p {
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             color: #666;
-            line-height: 1.4;
-            margin: 0 0 10px 0;
+            line-height: 1.5;
+            margin: 0 0 12px 0;
         }
 
         .expertise {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 5px;
+            gap: 6px;
         }
 
         .expertise span {
-            background: #f0f8f0;
+            background: rgba(76,175,80,0.1);
             color: #4CAF50;
-            padding: 3px 8px;
-            border-radius: 10px;
-            font-size: 0.7rem;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
             font-weight: 600;
             transition: all 0.3s ease;
+            border: 1px solid rgba(76,175,80,0.2);
         }
 
         .expertise span:hover {
             background: #4CAF50;
             color: white;
+            border-color: #4CAF50;
         }
 
         @media (max-width: 1024px) {
-            .about-wrapper {
+            .about-section {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 40px;
             }
 
             .leadership-grid {
@@ -229,26 +271,26 @@
         }
 
         @media (max-width: 768px) {
-            .about-wrapper {
-                padding: 35px 5%;
+            .about-section {
+                padding: 40px 5%;
                 margin-top: 60px;
             }
 
             .about-text h2 {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
 
             .leadership-header h2 {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
 
             .leadership-grid {
                 grid-template-columns: 1fr;
-                gap: 15px;
+                gap: 20px;
             }
 
             .leadership-section {
-                padding: 35px 5%;
+                padding: 40px 5%;
             }
         }
     </style>
@@ -267,18 +309,18 @@
         </div>
     </header>
 
-    <div class="about-wrapper">
+    <div class="about-section">
         <div class="about-image">
             <img src="4d8d7eba-c59c-48bb-869a-b4f621e22f22.png" alt="Seedlings">
             <div class="stats-overlay">
-                <div class="stat"><span>25+</span> Years</div>
-                <div class="stat"><span>1000+</span> Farmers</div>
+                <div class="stat"><span>25+</span><br>Years</div>
+                <div class="stat"><span>1000+</span><br>Farmers</div>
             </div>
         </div>
         
         <div class="about-text">
             <h2>Quality First, Always</h2>
-            <p>ISIRI is dedicated to producing superior quality seeds. We combine agricultural excellence with global standards to deliver disease-free, high-quality seeds that meet customer requirements.</p>
+            <p>ISIRI is dedicated to advancing Indian agriculture by producing superior quality seeds. We combine Indian agricultural excellence with global standards.</p>
             
             <div class="quick-features">
                 <div class="feature"><i class="fas fa-seedling"></i> Premium Seeds</div>
@@ -302,7 +344,7 @@
                 <div class="leader-info">
                     <h3>Basavaraj Hundekar</h3>
                     <span class="role">Founder & CEO</span>
-                    <p>Master's in Agriculture with 25+ years in seed production.</p>
+                    <p>Master's in Agriculture with 25+ years in seed production for overseas MNCs.</p>
                     <div class="expertise">
                         <span>Seed Production</span>
                         <span>Leadership</span>
@@ -318,7 +360,7 @@
                 <div class="leader-info">
                     <h3>Sanjeev Kumar Patil</h3>
                     <span class="role">Director</span>
-                    <p>Master's in Agriculture with expertise in agronomy.</p>
+                    <p>Master's in Agriculture with expertise in agronomy and crop management.</p>
                     <div class="expertise">
                         <span>Agronomy</span>
                         <span>Management</span>
@@ -350,7 +392,7 @@
                 <div class="leader-info">
                     <h3>Maruthi</h3>
                     <span class="role">Team Leader</span>
-                    <p>25+ years in crop management and quality control.</p>
+                    <p>Agriculture Diploma with 25+ years in crop management and quality control.</p>
                     <div class="expertise">
                         <span>Quality Control</span>
                         <span>Crop Management</span>
