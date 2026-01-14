@@ -12,25 +12,26 @@
         .about-section {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 50px 5%;
+            padding: 60px 5%;
             margin-top: 70px;
             display: grid;
             grid-template-columns: 0.5fr 1.5fr;
-            gap: 50px;
+            gap: 60px;
             align-items: center;
         }
 
         .about-image {
             position: relative;
-            border-radius: 12px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            max-width: 250px;
-            transition: transform 0.3s ease;
+            box-shadow: 0 20px 50px rgba(76,175,80,0.2);
+            max-width: 280px;
+            transition: all 0.4s ease;
         }
 
         .about-image:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 30px 70px rgba(76,175,80,0.3);
         }
 
         .about-image img {
@@ -40,48 +41,48 @@
         }
 
         .about-text h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: #0e6b23;
-            margin: 0 0 15px 0;
-            font-weight: 700;
-            line-height: 1.2;
+            margin: 0 0 20px 0;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         .about-text h2::after {
             content: '';
             display: block;
-            width: 50px;
-            height: 4px;
+            width: 60px;
+            height: 5px;
             background: linear-gradient(90deg, #4CAF50, #8BC34A);
-            margin-top: 12px;
-            border-radius: 2px;
+            margin-top: 15px;
+            border-radius: 3px;
         }
 
         .about-text p {
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: #555;
-            line-height: 1.6;
-            margin: 15px 0;
+            line-height: 1.7;
+            margin: 20px 0;
         }
 
         .quick-features {
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         .feature {
-            background: linear-gradient(135deg, rgba(76,175,80,0.08), rgba(139,195,74,0.08));
+            background: linear-gradient(135deg, rgba(76,175,80,0.1), rgba(139,195,74,0.1));
             color: #0e6b23;
-            padding: 10px 16px;
+            padding: 11px 18px;
             border-radius: 25px;
             font-size: 0.9rem;
             font-weight: 600;
             display: flex;
             align-items: center;
             gap: 8px;
-            border: 1.5px solid rgba(76,175,80,0.2);
+            border: 1.5px solid rgba(76,175,80,0.25);
             transition: all 0.3s ease;
         }
 
@@ -89,27 +90,26 @@
             background: linear-gradient(135deg, #4CAF50, #8BC34A);
             color: white;
             border-color: transparent;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(76,175,80,0.2);
         }
 
         .leadership-section {
-            padding: 60px 5%;
-            background: linear-gradient(135deg, #f8fbe8 0%, #ffffff 100%);
+            padding: 80px 5%;
+            background: linear-gradient(135deg, #f5faf2 0%, #ffffff 50%, #f0f8f0 100%);
         }
 
         .leadership-header {
             text-align: center;
-            margin-bottom: 50px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 60px;
         }
 
         .leadership-header h2 {
-            font-size: 2rem;
+            font-size: 2.4rem;
             color: #0e6b23;
             margin: 0;
-            font-weight: 700;
+            font-weight: 800;
+            letter-spacing: -0.5px;
             position: relative;
             display: inline-block;
         }
@@ -117,48 +117,72 @@
         .leadership-header h2::after {
             content: '';
             position: absolute;
-            bottom: -8px;
+            bottom: -12px;
             left: 50%;
             transform: translateX(-50%);
-            width: 50px;
-            height: 4px;
+            width: 60px;
+            height: 5px;
             background: linear-gradient(90deg, #4CAF50, #8BC34A);
-            border-radius: 2px;
+            border-radius: 3px;
         }
 
         .leadership-grid {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
             padding: 0 5%;
         }
 
         .leader-card {
             background: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(76,175,80,0.1);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(76,175,80,0.12);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .leader-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4CAF50, #8BC34A);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .leader-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(76,175,80,0.15);
-            border-color: rgba(76,175,80,0.2);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(76,175,80,0.2);
+            border-color: rgba(76,175,80,0.3);
+        }
+
+        .leader-card:hover::before {
+            opacity: 1;
         }
 
         .leader-avatar {
             position: relative;
-            width: 90px;
-            height: 90px;
-            margin: 0 auto 18px;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
             border-radius: 50%;
             overflow: hidden;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-            border: 3px solid rgba(76,175,80,0.1);
+            box-shadow: 0 10px 30px rgba(76,175,80,0.2);
+            border: 4px solid rgba(76,175,80,0.15);
+            transition: all 0.3s ease;
+        }
+
+        .leader-card:hover .leader-avatar {
+            border-color: rgba(76,175,80,0.4);
+            box-shadow: 0 15px 40px rgba(76,175,80,0.3);
         }
 
         .leader-avatar img {
@@ -169,88 +193,198 @@
 
         .experience-tag {
             position: absolute;
-            bottom: -8px;
-            right: -8px;
+            bottom: -10px;
+            right: -10px;
             background: linear-gradient(135deg, #4CAF50, #8BC34A);
             color: white;
-            padding: 4px 10px;
-            border-radius: 10px;
+            padding: 5px 12px;
+            border-radius: 12px;
             font-size: 0.7rem;
             font-weight: 700;
-            box-shadow: 0 4px 12px rgba(76,175,80,0.3);
+            box-shadow: 0 6px 16px rgba(76,175,80,0.35);
+            letter-spacing: 0.5px;
         }
 
         .leader-info h3 {
-            font-size: 1.15rem;
+            font-size: 1.25rem;
             color: #0e6b23;
-            margin: 0 0 6px 0;
+            margin: 0 0 8px 0;
             font-weight: 700;
+            letter-spacing: -0.3px;
         }
 
         .role {
             color: #4CAF50;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             display: block;
-            margin-bottom: 12px;
-            font-weight: 600;
+            margin-bottom: 14px;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
 
         .leader-info p {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #666;
-            line-height: 1.5;
-            margin: 0 0 12px 0;
+            line-height: 1.6;
+            margin: 0 0 14px 0;
         }
 
         .expertise {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 6px;
+            gap: 7px;
         }
 
         .expertise span {
-            background: rgba(76,175,80,0.1);
+            background: linear-gradient(135deg, rgba(76,175,80,0.12), rgba(139,195,74,0.08));
             color: #4CAF50;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 14px;
+            font-size: 0.8rem;
+            font-weight: 700;
             transition: all 0.3s ease;
-            border: 1px solid rgba(76,175,80,0.2);
+            border: 1px solid rgba(76,175,80,0.25);
         }
 
         .expertise span:hover {
-            background: #4CAF50;
+            background: linear-gradient(135deg, #4CAF50, #8BC34A);
             color: white;
-            border-color: #4CAF50;
+            border-color: transparent;
+            transform: translateY(-2px);
+        }
+
+        .team-leads-section {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            border: 1px solid rgba(76,175,80,0.12);
+            margin-top: 30px;
+            max-width: 1300px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: calc(5% + 32px);
+            padding-right: calc(5% + 32px);
+        }
+
+        .team-leads-section h3 {
+            font-size: 1.3rem;
+            color: #0e6b23;
+            margin: 0 0 20px 0;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .team-leads-section h3::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(180deg, #4CAF50, #8BC34A);
+            border-radius: 2px;
+        }
+
+        .team-leads-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .team-lead-item {
+            padding: 12px 16px;
+            background: linear-gradient(135deg, rgba(76,175,80,0.08), rgba(139,195,74,0.05));
+            border-radius: 10px;
+            border-left: 4px solid #4CAF50;
+            font-size: 0.95rem;
+            color: #0e6b23;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .team-lead-item:hover {
+            background: linear-gradient(135deg, rgba(76,175,80,0.15), rgba(139,195,74,0.1));
+            transform: translateX(5px);
+        }
+
+        .team-members-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+            max-width: 1300px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 5%;
+        }
+
+        .member-card {
+            background: white;
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            border: 1px solid rgba(76,175,80,0.12);
+            transition: all 0.4s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(76,175,80,0.15);
+        }
+
+        .member-card h4 {
+            font-size: 1.15rem;
+            color: #0e6b23;
+            margin: 0 0 8px 0;
+            font-weight: 700;
+        }
+
+        .member-role {
+            color: #4CAF50;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .member-card p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
         }
 
         @media (max-width: 1024px) {
             .about-section {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 40px;
             }
 
             .leadership-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .team-members-section {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
             .about-section {
-                padding: 35px 5%;
+                padding: 40px 5%;
                 margin-top: 60px;
             }
 
             .about-text h2 {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
 
             .leadership-header h2 {
-                font-size: 1.6rem;
+                font-size: 2rem;
             }
 
             .leadership-grid {
@@ -259,7 +393,7 @@
             }
 
             .leadership-section {
-                padding: 40px 5%;
+                padding: 50px 5%;
             }
         }
     </style>
@@ -304,12 +438,12 @@
             <div class="leader-card">
                 <div class="leader-avatar">
                     <img src="founder.jpg" alt="Founder">
-                    <div class="experience-tag">25+ Years</div>
+                    <div class="experience-tag">30+ Years</div>
                 </div>
                 <div class="leader-info">
                     <h3>Basavaraj Hundekar</h3>
                     <span class="role">Founder & CEO</span>
-                    <p>Master's in Agriculture with 25+ years in seed production for overseas MNCs.</p>
+                    <p>Master's in Agriculture and Business Administration with experience of over 30 years in seed production for overseas MNCs.</p>
                     <div class="expertise">
                         <span>Seed Production</span>
                         <span>Leadership</span>
@@ -319,12 +453,12 @@
             
             <div class="leader-card">
                 <div class="leader-avatar">
-                    <img src="director.jpg" alt="Director">
+                    <img src="director.jpg" alt="Team Manager">
                     <div class="experience-tag">10+ Years</div>
                 </div>
                 <div class="leader-info">
                     <h3>Sanjeev Kumar Patil</h3>
-                    <span class="role">Director</span>
+                    <span class="role">Team Manager</span>
                     <p>Master's in Agriculture with expertise in agronomy and crop management.</p>
                     <div class="expertise">
                         <span>Agronomy</span>
@@ -332,37 +466,41 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="leader-card">
                 <div class="leader-avatar">
-                    <img src="director.jpg" alt="Team Leader">
-                    <div class="experience-tag">Expert</div>
+                    <img src="director.jpg" alt="Team Member">
+                    <div class="experience-tag">25+ Years</div>
                 </div>
                 <div class="leader-info">
-                    <h3>Saaish Basavaraj</h3>
-                    <span class="role">Team Leader</span>
-                    <p>Specializes in finance and import-export management.</p>
+                    <h3>Shreya Hundekar</h3>
+                    <span class="role">Team Member</span>
+                    <p>Specializes in Seed processing, Packing and Dispatches.</p>
                     <div class="expertise">
-                        <span>Finance</span>
+                        <span>Seed Processing</span>
                         <span>Logistics</span>
                     </div>
                 </div>
             </div>
-            
-            <div class="leader-card">
-                <div class="leader-avatar">
-                    <img src="director.jpg" alt="Team Leader">
-                    <div class="experience-tag">25+ Years</div>
-                </div>
-                <div class="leader-info">
-                    <h3>Maruthi</h3>
-                    <span class="role">Team Leader</span>
-                    <p>Agriculture Diploma with 25+ years in crop management and quality control.</p>
-                    <div class="expertise">
-                        <span>Quality Control</span>
-                        <span>Crop Management</span>
-                    </div>
-                </div>
+        </div>
+
+        <div class="team-leads-section">
+            <h3>Field Team Leads</h3>
+            <p style="color: #666; margin-bottom: 16px; font-size: 0.95rem;">Crop Management and Field Quality</p>
+            <div class="team-leads-list">
+                <div class="team-lead-item">Maruthi H.B.</div>
+                <div class="team-lead-item">Hanumesh G.</div>
+                <div class="team-lead-item">Manjunath N</div>
+                <div class="team-lead-item">Manjunath R</div>
+                <div class="team-lead-item">Siddappa G</div>
+            </div>
+        </div>
+
+        <div class="team-members-section">
+            <div class="member-card">
+                <h4>Saaish B</h4>
+                <span class="member-role">Team Member</span>
+                <p>Specializes in managing finance and shipping operations, ensuring accurate documentation.</p>
             </div>
         </div>
     </section>
