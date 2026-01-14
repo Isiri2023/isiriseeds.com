@@ -7,10 +7,253 @@
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="styles-final.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .about-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 5%;
+            margin-top: 70px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .stats-overlay {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .stat {
+            background: rgba(255,255,255,0.95);
+            padding: 12px 16px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .stat span {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #4CAF50;
+            display: block;
+        }
+
+        .stat span + * {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            color: #0e6b23;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+        }
+
+        .about-text p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+            margin: 0 0 20px 0;
+        }
+
+        .quick-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .feature {
+            background: #f0f8f0;
+            color: #0e6b23;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(76,175,80,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .leadership-section {
+            padding: 50px 5%;
+            background: #f9f9f9;
+        }
+
+        .leadership-header {
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .leadership-header h2 {
+            font-size: 2rem;
+            color: #0e6b23;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .leadership-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 0 5%;
+        }
+
+        .leader-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid #f0f0f0;
+        }
+
+        .leader-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(76,175,80,0.12);
+        }
+
+        .leader-avatar {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .leader-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .experience-tag {
+            position: absolute;
+            bottom: -5px;
+            right: -5px;
+            background: #4CAF50;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 8px;
+            font-size: 0.65rem;
+            font-weight: 600;
+        }
+
+        .leader-info h3 {
+            font-size: 1.05rem;
+            color: #0e6b23;
+            margin: 0 0 5px 0;
+            font-weight: 600;
+        }
+
+        .role {
+            color: #666;
+            font-size: 0.8rem;
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .leader-info p {
+            font-size: 0.8rem;
+            color: #666;
+            line-height: 1.4;
+            margin: 0 0 10px 0;
+        }
+
+        .expertise {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .expertise span {
+            background: #f0f8f0;
+            color: #4CAF50;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .expertise span:hover {
+            background: #4CAF50;
+            color: white;
+        }
+
+        @media (max-width: 1024px) {
+            .about-wrapper {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .leadership-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-wrapper {
+                padding: 35px 5%;
+                margin-top: 60px;
+            }
+
+            .about-text h2 {
+                font-size: 1.6rem;
+            }
+
+            .leadership-header h2 {
+                font-size: 1.6rem;
+            }
+
+            .leadership-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .leadership-section {
+                padding: 35px 5%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Shared navigation -->
     <header>
         <div class="header-content">
             <div class="logo">ISIRI SEEDS PRODUCTION CO.</div>
@@ -24,123 +267,99 @@
         </div>
     </header>
 
-    <!-- Compact Hero Section -->
-    <section class="compact-hero">
-        <div class="hero-content">
-           <!-- <div class="hero-badge">About ISIRI</div>
-            <h1 class="hero-title">Growing Excellence</h1>
-            <p class="hero-subtitle">Premium quality seeds for sustainable agriculture</p>-->
+    <div class="about-wrapper">
+        <div class="about-image">
+            <img src="4d8d7eba-c59c-48bb-869a-b4f621e22f22.png" alt="Seedlings">
+            <div class="stats-overlay">
+                <div class="stat"><span>25+</span> Years</div>
+                <div class="stat"><span>1000+</span> Farmers</div>
+            </div>
+        </div>
+        
+        <div class="about-text">
+            <h2>Quality First, Always</h2>
+            <p>ISIRI is dedicated to producing superior quality seeds. We combine agricultural excellence with global standards to deliver disease-free, high-quality seeds that meet customer requirements.</p>
+            
+            <div class="quick-features">
+                <div class="feature"><i class="fas fa-seedling"></i> Premium Seeds</div>
+                <div class="feature"><i class="fas fa-globe"></i> Global Standards</div>
+                <div class="feature"><i class="fas fa-leaf"></i> Sustainable</div>
+            </div>
+        </div>
+    </div>
+
+    <section class="leadership-section">
+        <div class="leadership-header">
+            <h2>Expert Team</h2>
+        </div>
+        
+        <div class="leadership-grid">
+            <div class="leader-card">
+                <div class="leader-avatar">
+                    <img src="founder.jpg" alt="Founder">
+                    <div class="experience-tag">25+ Years</div>
+                </div>
+                <div class="leader-info">
+                    <h3>Basavaraj Hundekar</h3>
+                    <span class="role">Founder & CEO</span>
+                    <p>Master's in Agriculture with 25+ years in seed production.</p>
+                    <div class="expertise">
+                        <span>Seed Production</span>
+                        <span>Leadership</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="leader-card">
+                <div class="leader-avatar">
+                    <img src="director.jpg" alt="Director">
+                    <div class="experience-tag">10+ Years</div>
+                </div>
+                <div class="leader-info">
+                    <h3>Sanjeev Kumar Patil</h3>
+                    <span class="role">Director</span>
+                    <p>Master's in Agriculture with expertise in agronomy.</p>
+                    <div class="expertise">
+                        <span>Agronomy</span>
+                        <span>Management</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="leader-card">
+                <div class="leader-avatar">
+                    <img src="director.jpg" alt="Team Leader">
+                    <div class="experience-tag">Expert</div>
+                </div>
+                <div class="leader-info">
+                    <h3>Saaish Basavaraj</h3>
+                    <span class="role">Team Leader</span>
+                    <p>Specializes in finance and import-export management.</p>
+                    <div class="expertise">
+                        <span>Finance</span>
+                        <span>Logistics</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="leader-card">
+                <div class="leader-avatar">
+                    <img src="director.jpg" alt="Team Leader">
+                    <div class="experience-tag">25+ Years</div>
+                </div>
+                <div class="leader-info">
+                    <h3>Maruthi</h3>
+                    <span class="role">Team Leader</span>
+                    <p>25+ years in crop management and quality control.</p>
+                    <div class="expertise">
+                        <span>Quality Control</span>
+                        <span>Crop Management</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="compact-about">
-        <div class="about-wrapper">
-            <div class="about-image">
-                <img src="newupdatedlogo.png" alt="ISIRI Seeds Production Logo" style="width: 100%; height: auto; border-radius: 15px; max-width: 400px; margin: 0 auto; display: block;">
-            </div>
-            
-            <div class="about-text">
-                <div class="text-badge">Our Story</div>
-                <h2>Quality First, Always</h2>
-                <p>ISIRI is dedicated to producing superior quality seeds. We combine our team expertise with farmers skills to deliver best quality seeds as per global standards. Our focus is on producing disease-free, high-quality seeds that meets our customers requirement.</p>
-                
-                <div class="quick-features">
-                    <div class="feature">
-                        <i class="fas fa-seedling"></i>
-                        <span>Premium Quality Seeds</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-globe"></i>
-                        <span>Global Standards</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-leaf"></i>
-                        <span>Sustainable Practices</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Leadership Section -->
-    <section class="team-preview">
-        <div class="team-container">
-            <div class="team-header">
-                <div class="section-badge">Leadership</div>
-                <h2>Expert Team</h2>
-                <p>Meet our experienced professionals dedicated to agricultural excellence</p>
-            </div>
-            
-            <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; max-width: 1000px; margin: 0 auto;">
-                <div class="team-card" style="text-align: center; padding: 30px 20px;">
-                    <div class="team-image">
-                        <i class="fas fa-user-tie" style="font-size: 2.5rem; color: #4CAF50; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;"></i>
-                        <div class="experience-badge">25+</div>
-                    </div>
-                    <h3 style="text-align: center; margin: 15px 0 5px 0;">Basavaraj Hundekar</h3>
-                    <div class="role" style="text-align: center;">Founder & CEO</div>
-                    <p style="font-size: 0.85rem; line-height: 1.5; margin: 10px 0; text-align: center;">Master's in Agriculture and Business Administration with experience of over 30 years in seed production for overseas MNCs.</p>
-                </div>
-                
-                <div class="team-card" style="text-align: center; padding: 30px 20px;">
-                    <div class="team-image">
-                        <i class="fas fa-user-graduate" style="font-size: 2.5rem; color: #4CAF50; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;"></i>
-                        <div class="experience-badge">10+</div>
-                    </div>
-                    <h3 style="text-align: center; margin: 15px 0 5px 0;">Sanjeev Kumar Patil</h3>
-                    <div class="role" style="text-align: center;">Team Manager</div>
-                    <p style="font-size: 0.85rem; line-height: 1.5; margin: 10px 0; text-align: center;">Master's in Agriculture with expertise in agronomy and crop management.</p>
-                </div>
-                
-                <div class="team-card" style="text-align: center; padding: 30px 20px;">
-                    <div class="team-image">
-                        <i class="fas fa-user-cog" style="font-size: 2.5rem; color: #4CAF50; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;"></i>
-                        <div class="experience-badge">25+</div>
-                    </div>
-                    <h3 style="text-align: center; margin: 15px 0 5px 0;">Maruthi H.B.</h3>
-                    <div class="role" style="text-align: center;">Team Lead</div>
-                    <p style="font-size: 0.85rem; line-height: 1.5; margin: 10px 0; text-align: center;">Specializes in crop management and field quality operations.</p>
-                </div>
-                
-                <div class="team-card" style="text-align: center; padding: 30px 20px;">
-                    <div class="team-image">
-                        <i class="fas fa-users" style="font-size: 2.5rem; color: #4CAF50; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;"></i>
-                        <div class="experience-badge">Expert</div>
-                    </div>
-                    <h3 style="text-align: center; margin: 15px 0 5px 0;">Field Operations Team</h3>
-                    <div class="role" style="text-align: center;">Team Members</div>
-                    <div style="font-size: 0.8rem; line-height: 1.4; margin: 10px 0; text-align: center;">
-                        <div>• Hanumesh G.</div>
-                        <div>• Manjunath N.</div>
-                        <div>• Manjunath R.</div>
-                        <div>• Siddappa G.</div>
-                    </div>
-                </div>
-                
-                <div class="team-card" style="text-align: center; padding: 30px 20px;">
-                    <div class="team-image">
-                        <i class="fas fa-flask" style="font-size: 2.5rem; color: #4CAF50; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;"></i>
-                        <div class="experience-badge">Expert</div>
-                    </div>
-                    <h3 style="text-align: center; margin: 15px 0 5px 0;">Saaish B.</h3>
-                    <div class="role" style="text-align: center;">Team Member</div>
-                    <p style="font-size: 0.85rem; line-height: 1.5; margin: 10px 0; text-align: center;">Specializes in seed quality testing.</p>
-                </div>
-                
-                <div class="team-card" style="text-align: center; padding: 30px 20px;">
-                    <div class="team-image">
-                        <i class="fas fa-user-circle" style="font-size: 2.5rem; color: #4CAF50; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;"></i>
-                        <div class="experience-badge">25+</div>
-                    </div>
-                    <h3 style="text-align: center; margin: 15px 0 5px 0;">Shreya Hundekar</h3>
-                    <div class="role" style="text-align: center;">Team Member</div>
-                    <p style="font-size: 0.85rem; line-height: 1.5; margin: 10px 0; text-align: center;">Specializes in seed processing, packing and dispatches.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
     <footer>
         <p>Copyright © 2025. Isiri Seeds Production Co.</p>
     </footer>
