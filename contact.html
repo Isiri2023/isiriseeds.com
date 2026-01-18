@@ -13,7 +13,7 @@
 
         /* Hero Section */
         .contact-hero {
-            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #43a047 100%);
             padding: 100px 5% 80px;
             text-align: center;
             color: white;
@@ -28,8 +28,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.05) 0%, transparent 50%);
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -42,93 +42,111 @@
 
         .hero-badge {
             display: inline-block;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.25);
             color: white;
-            padding: 8px 20px;
+            padding: 10px 24px;
             border-radius: 30px;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             font-weight: 700;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            margin-bottom: 15px;
-            border: 1px solid rgba(255,255,255,0.3);
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.4);
+            backdrop-filter: blur(10px);
         }
 
         .hero-title {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             font-weight: 900;
             margin-bottom: 15px;
             letter-spacing: -1px;
+            text-shadow: 2px 4px 8px rgba(0,0,0,0.2);
         }
 
         .hero-subtitle {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             opacity: 0.95;
             font-weight: 300;
-            margin-bottom: 30px;
+            line-height: 1.6;
         }
 
-        /* Contact Info Cards */
+        /* Contact Info Section */
         .contact-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 60px 5%;
+            padding: 80px 5%;
         }
 
         .info-card {
             background: white;
-            padding: 35px;
-            border-radius: 15px;
+            padding: 40px;
+            border-radius: 18px;
             text-align: center;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(46,125,50,0.1);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(46,125,50,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #2e7d32, #43a047);
         }
 
         .info-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(46,125,50,0.15);
-            border-color: rgba(46,125,50,0.3);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(46,125,50,0.15);
+            border-color: rgba(46,125,50,0.2);
         }
 
         .info-icon {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             background: linear-gradient(135deg, #2e7d32, #43a047);
-            border-radius: 15px;
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.5rem;
-            margin: 0 auto 20px;
-            transition: transform 0.3s ease;
+            font-size: 1.8rem;
+            margin: 0 auto 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(46,125,50,0.2);
         }
 
         .info-card:hover .info-icon {
-            transform: scale(1.1) rotate(5deg);
+            transform: scale(1.15) rotate(8deg);
+            box-shadow: 0 12px 30px rgba(46,125,50,0.3);
         }
 
         .info-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: #1b5e20;
-            margin-bottom: 10px;
-            font-weight: 700;
+            margin-bottom: 12px;
+            font-weight: 800;
         }
 
         .info-card p {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.6;
+            color: #555;
+            font-size: 0.98rem;
+            line-height: 1.7;
             margin-bottom: 8px;
         }
 
         .info-card small {
             color: #999;
             font-size: 0.85rem;
+            display: block;
+            margin-top: 10px;
         }
 
         /* Form Section */
@@ -137,121 +155,81 @@
             background: linear-gradient(135deg, #ffffff 0%, #f1f8e9 100%);
         }
 
-        .form-container {
-            max-width: 700px;
+        .form-wrapper {
+            max-width: 900px;
             margin: 0 auto;
-            background: white;
-            padding: 50px;
-            border-radius: 20px;
-            box-shadow: 0 15px 50px rgba(46,125,50,0.1);
-            border: 1px solid rgba(46,125,50,0.1);
         }
 
         .form-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .form-header h2 {
+            font-size: 2.5rem;
+            color: #1b5e20;
+            margin-bottom: 15px;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+        }
+
+        .form-header p {
+            color: #666;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .form-container {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(46,125,50,0.12);
+            border: 1px solid rgba(46,125,50,0.1);
+        }
+
+        .form-container iframe {
+            width: 100%;
+            height: 800px;
+            border: none;
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 80px 5%;
+            background: white;
+        }
+
+        .map-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .map-header h3 {
             font-size: 2.2rem;
             color: #1b5e20;
             margin-bottom: 10px;
             font-weight: 800;
         }
 
-        .form-header p {
+        .map-header p {
             color: #666;
             font-size: 1rem;
         }
 
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            color: #1b5e20;
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 14px 16px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-family: inherit;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            background: #f9f9f9;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #2e7d32;
-            background: white;
-            box-shadow: 0 0 0 3px rgba(46,125,50,0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 16px;
-            background: linear-gradient(135deg, #2e7d32, #43a047);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(46,125,50,0.3);
-        }
-
-        .submit-btn:active {
-            transform: translateY(-1px);
-        }
-
-        /* Map Section */
-        .map-section {
-            padding: 60px 5%;
-            background: white;
-            text-align: center;
-        }
-
-        .map-section h3 {
-            font-size: 2rem;
-            color: #1b5e20;
-            margin-bottom: 30px;
-            font-weight: 800;
-        }
-
         .map-container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            border-radius: 15px;
+            border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.1);
+            border: 1px solid rgba(46,125,50,0.1);
         }
 
         .map-container iframe {
             width: 100%;
-            height: 350px;
+            height: 400px;
             border: none;
         }
 
@@ -260,7 +238,7 @@
             background: #1b5e20;
             color: white;
             text-align: center;
-            padding: 30px 5%;
+            padding: 40px 5%;
             font-size: 0.95rem;
         }
 
@@ -270,21 +248,26 @@
             .contact-hero { padding: 70px 5% 50px; }
             .hero-title { font-size: 2.5rem; }
             .hero-subtitle { font-size: 1rem; }
-            .contact-info { padding: 40px 5%; gap: 20px; }
-            .form-container { padding: 35px 25px; }
-            .form-header h2 { font-size: 1.8rem; }
-            .map-container iframe { height: 280px; }
+            .contact-info { padding: 50px 5%; gap: 20px; }
+            .info-card { padding: 30px 25px; }
+            .form-section { padding: 50px 5%; }
+            .form-header h2 { font-size: 2rem; }
+            .form-container iframe { height: 600px; }
+            .map-container iframe { height: 300px; }
         }
 
         @media (max-width: 480px) {
             body { padding-top: 65px; }
             .contact-hero { padding: 60px 5% 40px; }
             .hero-title { font-size: 2rem; }
-            .contact-info { padding: 30px 5%; }
-            .info-card { padding: 25px; }
-            .form-container { padding: 25px 20px; }
-            .form-header h2 { font-size: 1.5rem; }
-            .map-container iframe { height: 220px; }
+            .hero-subtitle { font-size: 0.95rem; }
+            .contact-info { padding: 40px 5%; }
+            .info-card { padding: 25px 20px; }
+            .info-icon { width: 60px; height: 60px; font-size: 1.5rem; }
+            .form-section { padding: 40px 5%; }
+            .form-header h2 { font-size: 1.6rem; }
+            .form-container iframe { height: 500px; }
+            .map-container iframe { height: 250px; }
         }
     </style>
 </head>
@@ -308,7 +291,7 @@
         <div class="hero-content">
             <div class="hero-badge">Get in Touch</div>
             <h1 class="hero-title">Contact Us</h1>
-            <p class="hero-subtitle">Connect with our agricultural experts and discover premium seed solutions</p>
+            <p class="hero-subtitle">Have questions about our premium seeds? Reach out to our team and let's grow together</p>
         </div>
     </section>
 
@@ -344,44 +327,24 @@
 
     <!-- Form Section -->
     <section class="form-section">
-        <div class="form-container">
+        <div class="form-wrapper">
             <div class="form-header">
-                <h2>Send us a Message</h2>
-                <p>We'd love to hear from you. Drop us a line!</p>
+                <h2>Send us Your Inquiry</h2>
+                <p>Fill out the form below and our team will get back to you shortly with all the information you need</p>
             </div>
 
-            <form action="#" method="post">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn">
-                    <span>Send Message</span>
-                    <i class="fas fa-arrow-right"></i>
-                </button>
-            </form>
+            <div class="form-container">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfY2s4k9TQ0lCdIrWkNeoPeiIhQrTHzf_KOA41iKv0/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
         </div>
     </section>
 
     <!-- Map Section -->
     <section class="map-section">
-        <h3>Our Location</h3>
+        <div class="map-header">
+            <h3>Our Location</h3>
+            <p>Visit us at our headquarters in Davanagere, Karnataka</p>
+        </div>
         <div class="map-container">
             <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3871.234567890123!2d75.9176!3d14.4644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDI3JzUxLjgiTiA3NcKwNTUnMDMuNCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
