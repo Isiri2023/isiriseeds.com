@@ -358,26 +358,178 @@
 
         @media (max-width: 768px) {
             .about-section {
-                padding: 35px 5%;
-                margin-top: 70px;
+                padding: 30px 5%;
+                margin-top: 60px;
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                max-width: 100%;
             }
 
             .about-text h2 {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
             }
 
-            .leadership-header h2 {
-                font-size: 1.8rem;
+            .about-text p {
+                font-size: 0.9rem;
+            }
+
+            .quick-features {
+                gap: 8px;
+            }
+
+            .feature {
+                font-size: 0.8rem;
+                padding: 8px 12px;
             }
 
             .leadership-section {
                 padding: 40px 5%;
             }
 
+            .leadership-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .leadership-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
             .leader-card {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
+                padding: 20px;
+            }
+
+            .leader-avatar {
+                width: 80px;
+                height: 80px;
+            }
+
+            .team-leads-section {
+                padding: 20px;
+                margin: 0 5%;
+            }
+
+            .team-leads-list {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 10px;
+            }
+
+            .team-members-section {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 0 5%;
+            }
+
+            .member-card {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-section {
+                padding: 20px 5%;
+                margin-top: 50px;
+            }
+
+            .about-image {
+                border-radius: 10px;
+            }
+
+            .about-text h2 {
+                font-size: 1.3rem;
+            }
+
+            .about-text p {
+                font-size: 0.85rem;
+            }
+
+            .quick-features {
+                gap: 6px;
+            }
+
+            .feature {
+                font-size: 0.75rem;
+                padding: 6px 10px;
+            }
+
+            .leadership-section {
+                padding: 30px 5%;
+            }
+
+            .leadership-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .leader-card {
+                padding: 15px;
+                gap: 15px;
+            }
+
+            .leader-avatar {
+                width: 70px;
+                height: 70px;
+            }
+
+            .leader-info h3 {
+                font-size: 1rem;
+            }
+
+            .role {
+                font-size: 0.7rem;
+            }
+
+            .leader-info p {
+                font-size: 0.8rem;
+            }
+
+            .expertise span {
+                font-size: 0.65rem;
+                padding: 3px 7px;
+            }
+
+            .team-leads-section {
+                padding: 15px;
+                margin: 0 3%;
+            }
+
+            .team-leads-section h3 {
+                font-size: 1rem;
+            }
+
+            .team-leads-list {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .team-lead-item {
+                font-size: 0.85rem;
+                padding: 8px 10px;
+            }
+
+            .team-members-section {
+                padding: 0 3%;
+                gap: 12px;
+            }
+
+            .member-card {
+                padding: 12px;
+            }
+
+            .member-card h4 {
+                font-size: 0.95rem;
+            }
+
+            .member-role {
+                font-size: 0.7rem;
+            }
+
+            .member-card p {
+                font-size: 0.8rem;
             }
         }
     </style>

@@ -442,21 +442,71 @@ footer {
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .hero-content, .about-content { grid-template-columns: 1fr; gap: 50px; }
-  .hero-text h1 { font-size: 3.5rem; }
-  .section-title { font-size: 3rem; }
+  .hero-content, .about-content { grid-template-columns: 1fr; gap: 40px; }
+  .hero-text h1 { font-size: 2.8rem; }
+  .section-title { font-size: 2.5rem; }
   .floating-card { display: none; }
+  .slideshow-container { height: 350px; }
 }
 @media (max-width: 768px) {
-  .header-content { flex-direction: column; gap: 15px; }
-  nav { gap: 20px; flex-wrap: wrap; }
-  .hero-text h1 { font-size: 2.2rem; }
-  .hero-stats { flex-direction: column; gap: 25px; }
-  .features-grid { grid-template-columns: 1fr; }
-  .about-features { grid-template-columns: 1fr; }
-  .hero-buttons, .cta-buttons { flex-direction: column; }
-  .section-title { font-size: 2.2rem; }
-  .cta h2 { font-size: 2.2rem; }
+  .hero { padding: 40px 5% 20px; }
+  .hero-content { gap: 30px; }
+  .hero-text h1 { font-size: 1.8rem; line-height: 1.2; }
+  .hero-text p { font-size: 0.9rem; }
+  .hero-buttons { flex-direction: column; gap: 10px; }
+  .btn-primary, .btn-secondary { width: 100%; text-align: center; padding: 10px 20px; font-size: 0.85rem; }
+  .hero-stats { flex-direction: column; gap: 20px; }
+  .stat-number { font-size: 2rem; }
+  .stat-label { font-size: 0.8rem; }
+  .slideshow-container { height: 280px; }
+  .features-grid { grid-template-columns: 1fr; gap: 20px; }
+  .section-title { font-size: 1.8rem; }
+  .section-subtitle { font-size: 0.9rem; }
+  .feature-card { padding: 24px 20px; }
+  .feature-icon { width: 55px; height: 55px; }
+  .feature-icon i { font-size: 1.5rem; }
+  .feature-card h3 { font-size: 1.1rem; }
+  .feature-card p { font-size: 0.85rem; }
+  .about-content { gap: 30px; }
+  .about-text h2 { font-size: 1.6rem; }
+  .about-text p { font-size: 0.9rem; }
+  .about-features { grid-template-columns: 1fr; gap: 12px; }
+  .about-feature { padding: 12px; }
+  .cta h2 { font-size: 1.8rem; }
+  .cta p { font-size: 0.9rem; }
+  .cta-buttons { flex-direction: column; gap: 12px; }
+  .btn-white, .btn-outline { padding: 10px 24px; font-size: 0.85rem; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 30px 5% 15px; }
+  .hero-text h1 { font-size: 1.4rem; }
+  .hero-text p { font-size: 0.85rem; line-height: 1.4; }
+  .hero-buttons { gap: 8px; }
+  .btn-primary, .btn-secondary { padding: 9px 16px; font-size: 0.8rem; }
+  .hero-stats { gap: 15px; }
+  .stat-number { font-size: 1.6rem; }
+  .stat-label { font-size: 0.75rem; }
+  .slideshow-container { height: 220px; }
+  .features { padding: 40px 5%; }
+  .section-header { margin-bottom: 30px; }
+  .section-title { font-size: 1.5rem; }
+  .section-subtitle { font-size: 0.85rem; }
+  .features-grid { gap: 15px; }
+  .feature-card { padding: 20px 16px; }
+  .feature-icon { width: 50px; height: 50px; margin-bottom: 15px; }
+  .feature-icon i { font-size: 1.3rem; }
+  .feature-card h3 { font-size: 1rem; }
+  .feature-card p { font-size: 0.8rem; line-height: 1.4; }
+  .about { padding: 40px 5%; }
+  .about-text h2 { font-size: 1.4rem; }
+  .about-text p { font-size: 0.85rem; }
+  .about-features { gap: 10px; }
+  .about-feature { padding: 10px; font-size: 0.8rem; }
+  .cta { padding: 40px 5%; }
+  .cta h2 { font-size: 1.5rem; }
+  .cta p { font-size: 0.85rem; }
+  .cta-buttons { gap: 10px; }
+  .btn-white, .btn-outline { padding: 9px 20px; font-size: 0.8rem; }
 }
 </style>
 </head>
